@@ -11,7 +11,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <>
-      <footer className="  bg-[#303031] w-[100vw] ">
+      <footer className="  bg-[#303031]">
         <div className="w-[100%] flex flex-col md:flex-row gap-1  justify-center  items-center  p-4 md:flex-wrap">
           <div className="md:flex md:flex-row md:w-[100%] justify-center items-center md:p-1 md:m-4">
             <div className="content flex flex-col justify-center items-center ">
@@ -32,7 +32,7 @@ const Footer = () => {
               </h4>
 
               <h1 className=" text-[#a0a0a0] text-center text-md">
-                Start using Coelian today.
+                Start using Tokyo Immo today.
               </h1>
 
               <div className="mailer flex mt-4">
