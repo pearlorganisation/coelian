@@ -1,14 +1,25 @@
+"use client";
 // ------------------------------------------------Imports----------------------------------------------------
 import { SiMinutemailer } from "react-icons/si";
 import { RxLinkedinLogo } from "react-icons/rx";
 import { BsTwitterX } from "react-icons/bs";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { FaMeta } from "react-icons/fa6";
-import logo from "../../_assets/images/logo.png";
+import logo from "../../../_assets/images/logo.png";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useContext } from "react";
+import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
 // ----------------------------------------------------------------------------------------------------------
 
 const Footer = () => {
+  // ------------------------------------------------States----------------------------------------------------
+  // ----------------------------------------------------------------------------------------------------------
+  // ------------------------------------------------Hooks----------------------------------------------------
+  const router = useRouter();
+  const { setSelectedIndex } = useContext(RootContext);
+  // ----------------------------------------------------------------------------------------------------------
   return (
     <>
       <footer className="  bg-[#303031]">
@@ -52,10 +63,17 @@ const Footer = () => {
                   <a href="#">About</a>
                 </p>
                 <p>
-                  <a href="#">Jobs </a>
+                  <Link href="#">Jobs </Link>
                 </p>
                 <p>
-                  <a href="#">Docs </a>
+                  <button
+                    onClick={() => {
+                      router.push("/services");
+                      setSelectedIndex(null);
+                    }}
+                  >
+                    Services
+                  </button>
                 </p>
               </div>
               <div>

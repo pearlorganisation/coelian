@@ -1,5 +1,7 @@
-import "./global.css"
+// -------------------------------------------------Imports------------------------------------------------
+import DefaultLayout from "./_components/layout/defaultLayout/DefaultLayout";
+// --------------------------------------------------------------------------------------------------------
 
 export default function Home() {
-  return <h1>hello</h1>;
+  return <DefaultLayout />;
 }
