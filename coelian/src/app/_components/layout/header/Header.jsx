@@ -8,7 +8,7 @@ import mobileNavImg from "../../../_assets/images/mobileNavImg.jpg";
 import Link from "next/link";
 import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
 import { Roboto, Jersey_10 } from "next/font/google";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 // ------------------------------------------------------------------------------------------------
 
 const roboto = Roboto({
@@ -44,6 +44,7 @@ function Header(props, ref) {
   // ------------------------------------------------------------------------------------------------
   // -------------------------------------------------Hooks-------------------------------------------
   const { selectedIndex, setSelectedNavLink } = useContext(RootContext);
+  const pathname = usePathname();
   // ------------------------------------------------------------------------------------------------
   // -----------------------------------------------Functions-------------------------------------------
   function handleToggle() {
@@ -85,7 +86,7 @@ function Header(props, ref) {
                 >
                   <div
                     onClick={() => {
-                      router.push("/");
+                      pathname !== "/" && router.push("/");
                       setSelectedNavLink(`${navData?.path}`);
                     }}
                   >
