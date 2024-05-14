@@ -7,14 +7,10 @@ import logo from "../../../_assets/images/logo.png";
 import mobileNavImg from "../../../_assets/images/mobileNavImg.jpg";
 import Link from "next/link";
 import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
-import { Roboto, Jersey_10 } from "next/font/google";
+import { Jersey_10 } from "next/font/google";
 import { useRouter, usePathname } from "next/navigation";
 // ------------------------------------------------------------------------------------------------
 
-const roboto = Roboto({
-  weight: "400",
-  subsets: ["latin"],
-});
 const jersey = Jersey_10({
   weight: "400",
   subsets: ["latin"],
@@ -91,7 +87,7 @@ function Header(props, ref) {
                     }}
                   >
                     <span
-                      className={`${jersey.className} cursor-pointer jersey-10-regular text-xl sm:text-2xl md:text-3xl`}
+                      className={`${jersey.className} cursor-pointer text-xl sm:text-2xl md:text-3xl`}
                     >
                       {navData?.title}
                     </span>
