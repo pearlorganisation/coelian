@@ -24,7 +24,7 @@ const Blogs = (props, ref) => {
   );
 
   return (
-    <div className="blogs border border-red-500" ref={blogsRef}>
+    <div className="blogs p-[200px] border border-red-500" ref={blogsRef}>
       Blogs
     </div>
   );

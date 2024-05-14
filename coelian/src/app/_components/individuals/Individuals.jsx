@@ -24,7 +24,8 @@ const Individuals = (props, ref) => {
   );
 
   return (
-    <div className="individuals border border-red-500" ref={individualsRef}>
+    <div className="individuals p-[20
+    0px] border border-red-500" ref={individualsRef}>
       Individuals
     </div>
   );
