@@ -30,7 +30,7 @@ const Blogs = (props, ref) => {
           <div class="flex flex-wrap justify-center -mx-4">
             <div class="w-full px-4">
               <div class="text-center mx-auto mb-[60px] lg:mb-20 max-w-[510px]">
-                <span class="font-semibold text-lg text-primary mb-2 block">
+                <span class="font-semibold text-lg text-primary  block">
                   Our Blogs
                 </span>
                 <h2
@@ -40,7 +40,7 @@ const Blogs = (props, ref) => {
                   sm:text-4xl
                   md:text-[40px]
                   text-dark
-                  mb-4
+                
                   "
                 >
                   Our Recent News
