@@ -5,6 +5,7 @@ import Header from "./_components/layout/header/Header";
 import RootContextProvider from "./_contexts/RootContext/RootContextProvider";
 import "./global.css";
 import Partners from "./_components/partners/Partners";
+import { ReactLenis } from "lenis/react";
 
 // ----------------------------------------------------------------------------------------------------------
 
@@ -26,10 +27,12 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <RootContextProvider>
-          <Header />
-          {children}
-          <Partners />
-          <Footer />
+          <ReactLenis root>
+            <Header />
+            {children}
+            <Partners />
+            <Footer />
+          </ReactLenis>
         </RootContextProvider>
       </body>
     </html>
