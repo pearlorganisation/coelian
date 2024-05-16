@@ -6,6 +6,7 @@ import RootContextProvider from "./_contexts/RootContext/RootContextProvider";
 import "./global.css";
 import Partners from "./_components/partners/Partners";
 import { ReactLenis } from "lenis/react";
+import "./_utils/globalization/i18n/i18n"
 
 // ----------------------------------------------------------------------------------------------------------
 

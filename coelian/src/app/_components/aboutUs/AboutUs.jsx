@@ -3,13 +3,17 @@
 import React, { forwardRef, useImperativeHandle, useRef } from "react";
 import AboutUsImg from "../../_assets/images/AboutUsImg.jpg";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 // --------------------------------------------------------------------------------------------
+
+
 
 const AboutUs = (props, ref) => {
   // -----------------------------------------States--------------------------------------------
   // --------------------------------------------------------------------------------------------
   // -----------------------------------------Hooks--------------------------------------------
   const aboutUsRef = useRef();
+  const { t, i18n } = useTranslation();
 
   useImperativeHandle(
     ref,

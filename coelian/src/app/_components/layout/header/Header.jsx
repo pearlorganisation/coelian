@@ -14,6 +14,7 @@ import { useRouter, usePathname } from "next/navigation";
 const jersey = Jersey_10({
   weight: "400",
   subsets: ["latin"],
+  adjustFontFallback: false,
 });
 
 function Header(props, ref) {
@@ -70,7 +71,9 @@ function Header(props, ref) {
             <Image src={logo} alt="logo" width={100} />
           </div>
 
-          <nav className="flex gap-4 text-[25px] jersey-10-regular tracking-widest">
+          <nav
+            className={`${jersey.className} flex gap-4 text-[25px] jersey-10-regular tracking-widest`}
+          >
             {navArray.map((navData, index) => {
               return (
                 <li
