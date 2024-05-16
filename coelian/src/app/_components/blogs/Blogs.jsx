@@ -1,6 +1,9 @@
 "use client";
 // -----------------------------------------------Imports--------------------------------------------------
-import { forwardRef, useImperativeHandle, useRef } from "react";
+import { forwardRef, useContext, useImperativeHandle, useRef } from "react";
+import { motion } from "framer-motion";
+import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
+
 // --------------------------------------------------------------------------------------------------------
 
 const Blogs = (props, ref) => {
@@ -8,6 +11,8 @@ const Blogs = (props, ref) => {
   // --------------------------------------------------------------------------------------------------------
   // -----------------------------------------------Hooks--------------------------------------------------
   const blogsRef = useRef();
+  const { selectedIndex, selectedNavLink } = useContext(RootContext);
+
   // --------------------------------------------------------------------------------------------------------
   // ---------------------------------------------Functions--------------------------------------------------
   // --------------------------------------------------------------------------------------------------------
@@ -54,7 +59,15 @@ const Blogs = (props, ref) => {
           </div>
           <div class="flex flex-wrap -mx-4">
             <div class="w-full md:w-1/2 lg:w-1/2 px-4">
-              <div class="max-w-[370px] mx-auto mb-10 h-[500px] shadow-[0_0_0_1px#b3b3b3] rounded-lg  ">
+              <motion.div
+                animate={{
+                  x: window.innerWidth > 1080 && selectedIndex == 4 ? -100 : 0,
+                  scale:
+                    window.innerWidth > 1080 && selectedIndex == 4 ? 1 : 0.8,
+                }}
+                initial={{ scale: 0.8 }}
+                class="max-w-[370px] mx-auto mb-10 h-[500px] shadow-[0_0_0_1px#b3b3b3] rounded-lg  "
+              >
                 <div class="rounded overflow-hidden mb-8">
                   <img
                     className="rounded-t-lg rounded-b-0"
@@ -108,9 +121,16 @@ const Blogs = (props, ref) => {
                     France pour valider ma licence...
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
-            <div class="w-full md:w-1/2 lg:w-1/2 px-4">
+            <motion.div
+              animate={{
+                x: window.innerWidth > 1080 && selectedIndex == 4 ? 100 : 0,
+                scale: window.innerWidth > 1080 && selectedIndex == 4 ? 1 : 0.8,
+              }}
+              initial={{ scale: 0.8 }}
+              class="w-full md:w-1/2 lg:w-1/2 px-4"
+            >
               <div class="max-w-[370px] mx-auto mb-10 h-[500px] shadow-[0_0_0_1px#b3b3b3] rounded-lg ">
                 <div class="rounded overflow-hidden mb-8">
                   <img
@@ -166,7 +186,7 @@ const Blogs = (props, ref) => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
             {/* <div class="w-full md:w-1/2 lg:w-1/3 px-4">
               <div class="max-w-[370px] mx-auto mb-10">
                 <div class="rounded overflow-hidden mb-8">
