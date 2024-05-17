@@ -5,9 +5,7 @@ import Hamburger from "hamburger-react";
 import Image from "next/image";
 import logo from "../../../_assets/images/logo.png";
 import mobileNavImg from "../../../_assets/images/mobileNavImg.jpg";
-import Link from "next/link";
 import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
-import { Jersey_10 } from "next/font/google";
 import { useRouter, usePathname } from "next/navigation";
 import { Noto_Sans } from "next/font/google";
 // ------------------------------------------------------------------------------------------------
@@ -73,7 +71,7 @@ function Header(props, ref) {
           </div>
 
           <nav
-            className={`${jersey.className} flex gap-4 text-[25px] jersey-10-regular tracking-widest`}
+            className={` flex gap-4 text-[25px] jersey-10-regular tracking-widest`}
           >
             {navArray.map((navData, index) => {
               return (
