@@ -9,10 +9,11 @@ import Link from "next/link";
 import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
 import { Jersey_10 } from "next/font/google";
 import { useRouter, usePathname } from "next/navigation";
+import { Noto_Sans } from "next/font/google";
 // ------------------------------------------------------------------------------------------------
 
-const jersey = Jersey_10({
-  weight: "400",
+const noto_sans = Noto_Sans({
+  weight: "700",
   subsets: ["latin"],
   adjustFontFallback: false,
 });
@@ -90,7 +91,7 @@ function Header(props, ref) {
                     }}
                   >
                     <span
-                      className={`${jersey.className} cursor-pointer text-xl sm:text-2xl md:text-3xl`}
+                      className={`${noto_sans.className} cursor-pointer text-lg sm:text-xl md:text-2xl`}
                     >
                       {navData?.title}
                     </span>
