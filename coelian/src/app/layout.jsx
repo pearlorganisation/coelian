@@ -35,6 +35,7 @@ export default function RootLayout({ children }) {
             <Footer />
           </ReactLenis>
         </RootContextProvider>
+        <div id="portal"></div>
       </body>
     </html>
   );

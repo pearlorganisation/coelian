@@ -8,6 +8,7 @@ import Corporate from "../../corporate/Corporate";
 import ContactUs from "../../contactUs/ContactUs";
 import Blogs from "../../blogs/Blogs";
 import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
+import Fab from "../../fab/Fab";
 
 // -----------------------------------------------------------------------------------------------------------
 
@@ -47,7 +48,9 @@ export default function DefaultLayout({ params, children }) {
   // ----------------------------------------------Functions------------------------------------------------
 
   const viewScroller = (elementRef) => {
-    return elementRef?.current?.reference?.scrollIntoView({behavior:"smooth"});
+    return elementRef?.current?.reference?.scrollIntoView({
+      behavior: "smooth",
+    });
   };
 
   const navLinkSelectorObj = {
