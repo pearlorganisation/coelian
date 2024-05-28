@@ -3,6 +3,7 @@
 import { forwardRef, useContext, useImperativeHandle, useRef } from "react";
 import { motion } from "framer-motion";
 import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
+import { Trans, useTranslation } from "react-i18next";
 
 // --------------------------------------------------------------------------------------------------------
 
@@ -12,6 +13,7 @@ const Blogs = (props, ref) => {
   // -----------------------------------------------Hooks--------------------------------------------------
   const blogsRef = useRef();
   const { selectedIndex, selectedNavLink } = useContext(RootContext);
+  const { i18n } = useTranslation();
 
   // --------------------------------------------------------------------------------------------------------
   // ---------------------------------------------Functions--------------------------------------------------
@@ -36,7 +38,7 @@ const Blogs = (props, ref) => {
             <div class="w-full px-4">
               <div class="text-center mx-auto mb-[60px] lg:mb-20 max-w-[510px]">
                 <span class="font-semibold text-lg text-primary  block">
-                  Our Blogs
+                  <Trans i18nKey="pages.blogs.title"></Trans>
                 </span>
                 <h2
                   class="
@@ -48,11 +50,10 @@ const Blogs = (props, ref) => {
                 
                   "
                 >
-                  Our Recent News
+                  <Trans i18nKey="pages.blogs.title"></Trans>
                 </h2>
                 <p class="text-base text-body-color">
-                  There are many variations of passages of Lorem Ipsum available
-                  but the majority have suffered alteration in some form.
+                  <Trans i18nKey="pages.blogs.miniTitle"></Trans>
                 </p>
               </div>
             </div>
@@ -94,7 +95,7 @@ const Blogs = (props, ref) => {
                      mb-5
                      "
                   >
-                    Read More
+                    <Trans i18nKey="pages.blogs.readMoreButton"></Trans>
                   </a>
                   <h3>
                     <a
@@ -112,13 +113,12 @@ const Blogs = (props, ref) => {
                         hover:text-primary
                         "
                     >
-                      Tokyo Immo on vivreatokyo.com
+                      <Trans i18nKey="pages.blogs.paragraph.part1.title"></Trans>
+                      
                     </a>
                   </h3>
                   <p class="text-base text-body-color">
-                    Coelien revient sur son parcours au Japon : « Après avoir
-                    fait un échange à l’université d’Okayama et être rentré en
-                    France pour valider ma licence...
+                  <Trans i18nKey="pages.blogs.paragraph.part1.body"></Trans>
                   </p>
                 </div>
               </motion.div>
@@ -158,7 +158,7 @@ const Blogs = (props, ref) => {
                      mb-5
                      "
                   >
-                    Read More
+                    <Trans i18nKey="pages.blogs.readMoreButton"></Trans>{" "}
                   </a>
                   <h3>
                     <a
@@ -176,69 +176,16 @@ const Blogs = (props, ref) => {
                         hover:text-primary
                         "
                     >
-                      Tokyo Immo on Expat.org
+                       <Trans i18nKey="pages.blogs.paragraph.part2.title"></Trans>
                     </a>
                   </h3>
                   <p class="text-base text-body-color">
-                    TOKYO IMMO offers you apartments, houses or buildings
-                    corresponding to customer expectations and assists them in
-                    getting off to a...
+                  <Trans i18nKey="pages.blogs.paragraph.part2.body"></Trans>
+
                   </p>
                 </div>
               </div>
             </motion.div>
-            {/* <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-              <div class="max-w-[370px] mx-auto mb-10">
-                <div class="rounded overflow-hidden mb-8">
-                  <img
-                    src="https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-03.jpg"
-                    alt="image"
-                    class="w-full"
-                  />
-                </div>
-                <div>
-                  <span
-                    class="
-                     bg-primary
-                     rounded
-                     inline-block
-                     text-center
-                     py-1
-                     px-4
-                     text-xs
-                     leading-loose
-                     font-semibold
-                     text-white
-                     mb-5
-                     "
-                  >
-                    Jan 05, 2023
-                  </span>
-                  <h3>
-                    <a
-                      href="javascript:void(0)"
-                      class="
-                        font-semibold
-                        text-xl
-                        sm:text-2xl
-                        lg:text-xl
-                        xl:text-2xl
-                        mb-4
-                        inline-block
-                        text-dark
-                        hover:text-primary
-                        "
-                    >
-                      The no-fuss guide to upselling and cross selling
-                    </a>
-                  </h3>
-                  <p class="text-base text-body-color">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
-                  </p>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>
