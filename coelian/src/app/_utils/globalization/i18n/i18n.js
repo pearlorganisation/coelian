@@ -40,8 +40,7 @@ i18n
             navbar: {
               home: "Home",
               about: "About Us",
-              individual: "Individual",
-              corporate: "Corporate",
+              services: "Services",
               blog: "Blogs",
               contact: "Contact Us",
             },
