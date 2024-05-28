@@ -26,7 +26,7 @@ const Corporate = (props, ref) => {
   return (
     <>
       <div
-      className="corporate bg-[#e1e7f0] p-5 flex flex-col gap-4 border border-green-500  h-[90vh] "
+      className="corporate bg-[#e1e7f0] p-5 flex flex-col gap-4  h-[90vh] "
       ref={corporateRef}
     >
 
