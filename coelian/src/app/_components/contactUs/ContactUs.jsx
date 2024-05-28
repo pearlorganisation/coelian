@@ -41,26 +41,7 @@ const ContactUs = (props, ref) => {
       ref={contactUsRef}
     >
       <div className="blurEffect m-2 md:m-0 w-[400px]">
-        {/* <style jsx>
-          {`
-            .blurEffect {
-              background: rgb(65 62 62 / 40%);
-              box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-              backdrop-filter: blur(3.5px);
-              -webkit-backdrop-filter: blur(3.5px);
-              border-radius: 10px;
-              border: 1px solid rgba(255, 255, 255, 0.18);
-            }
-            .glass {
-              background-color: rgba(255, 255, 255, 0.4);
-              box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-              backdrop-filter: blur(4px);
-              -webkit-backdrop-filter: blur(4px);
-              border-radius: 6px;
-              border: 1px solid rgba(255, 255, 255, 0.18);
-            }
-          `}
-        </style> */}
+
         <form className="p-5" onSubmit={handleSubmit(() => {})}>
           <div className="md:text-[1.2rem] text-[1.2rem]  text-white flex justify-center items-center flex-col font-semibold font-mono">
             <h1 className="text-3xl text-white">Contact Us </h1>

@@ -8,7 +8,7 @@ import Corporate from "../../corporate/Corporate";
 import ContactUs from "../../contactUs/ContactUs";
 import Blogs from "../../blogs/Blogs";
 import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
-import Fab from "../../fab/Fab";
+import TrustedBy from "../../TrustedBy/TrustedBy";
 
 // -----------------------------------------------------------------------------------------------------------
 
@@ -104,12 +104,15 @@ export default function DefaultLayout({ params, children }) {
   return (
     <>
       <Home ref={homeRef} />
+      <TrustedBy/>
       <AboutUs ref={aboutUsRef} />
       <Individuals ref={individualsRef} />
       <Corporate ref={corporateRef} />
       <Blogs ref={blogsRef} />
       <ContactUs ref={contactUsRef} />
+
       {/* <main>{children}</main> */}
+      
     </>
   );
 }

@@ -3,7 +3,7 @@
 import React, { forwardRef, useImperativeHandle, useRef } from "react";
 import AboutUsImg from "../../_assets/images/AboutUsImg.jpg";
 import Image from "next/image";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 // --------------------------------------------------------------------------------------------
 
 
@@ -14,6 +14,7 @@ const AboutUs = (props, ref) => {
   // -----------------------------------------Hooks--------------------------------------------
   const aboutUsRef = useRef();
   const { t, i18n } = useTranslation();
+  console.log("about is rendering")
 
   useImperativeHandle(
     ref,
@@ -33,20 +34,9 @@ const AboutUs = (props, ref) => {
         </div>
 
         <div className="flex flex-col items-center justify-around gap-3 text-sm md:text-[1.1rem] font-semibold md:h-[400px] md:w-[40vw] ">
-          <p className="md:text-5xl text-2xl">About Us</p>
+          <p className="md:text-5xl text-2xl"><Trans i18nKey="pages.aboutUs.title"> </Trans></p>
           <p className="text-base font-light text-wrap ">
-            TOKYO IMMO offers you apartments, houses or buildings that meet your
-            expectations and helps you get off to a smooth start in Japan. We'll
-            work with you to find the real estate that will give you the peace
-            of mind you're looking for in Japan. Each property is unique. Within
-            the same building, between two properties with identical structures
-            or two adjoining apartments, everything will be different if the
-            location is not exactly the same: sunshine, perception of noise,
-            wind flow... Among the wealth of information available, TOKYO IMMO
-            will do its utmost to find the right property for you. We don't just
-            show you apartments, houses or buildings, we can also take care of
-            the formalities involved in subscribing to the various
-            housing-related services, to help you prepare for your move.
+          <Trans i18nKey="pages.aboutUs.description"> </Trans>
           </p>
         </div>
       </div>

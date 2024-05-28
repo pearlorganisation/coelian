@@ -5,9 +5,14 @@ import Hamburger from "hamburger-react";
 import Image from "next/image";
 import logo from "../../../_assets/images/logo.png";
 import mobileNavImg from "../../../_assets/images/mobileNavImg.jpg";
+import Link from "next/link";
 import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
+import { Jersey_10 } from "next/font/google";
 import { useRouter, usePathname } from "next/navigation";
 import { Noto_Sans } from "next/font/google";
+import Fab from "../../fab/Fab";
+import { Trans } from "react-i18next";
+import LangFlag from "../../langFlag/LangFlag";
 // ------------------------------------------------------------------------------------------------
 
 const noto_sans = Noto_Sans({
@@ -16,24 +21,30 @@ const noto_sans = Noto_Sans({
   adjustFontFallback: false,
 });
 
-function Header(props, ref) {
+function Header({}, ref) {
+
   // -------------------------------------------------States-------------------------------------------
   const [navHam, setNavHam] = useState(false);
-
+  
+  
   const navArray = [
     {
-      title: "Home",
+      title: <Trans i18nKey="pages.navbar.home"></Trans>,
       path: "home",
     },
     {
-      title: "About Us",
+      title: <Trans i18nKey="pages.navbar.about"></Trans>,
       path: "aboutUs",
     },
-    { title: "Individuals", path: "individuals" },
-    { title: "Corporate", path: "corporate" },
-    { title: "Blogs", path: "blogs" },
-    { title: "Contact Us", path: "contactUs" },
+    { title: <Trans i18nKey="pages.navbar.individual"></Trans>, path: "individuals" },
+    { title: <Trans i18nKey="pages.navbar.corporate"></Trans>, path: "corporate" },
+    { title: <Trans i18nKey="pages.navbar.blog"></Trans>, path: "blogs" },
+    { title: <Trans i18nKey="pages.navbar.contact"></Trans>, path: "contactUs" },
   ];
+
+  
+  
+  
 
   const router = useRouter();
 
@@ -51,6 +62,7 @@ function Header(props, ref) {
 
   return (
     <>
+    <Fab/>
       <div className="relative hidden  sm:block h-[100px] z-[99] ">
         <style jsx="true">{`
           .roboto-regular {
@@ -97,6 +109,9 @@ function Header(props, ref) {
                 </li>
               );
             })}
+            {/*------------------ Language Flag Component---------------  */}
+                  <LangFlag />
+
           </nav>
         </div>
       </div>
@@ -114,24 +129,29 @@ function Header(props, ref) {
             src={mobileNavImg}
             className=" absolute top-0 left-0 -z-10 w-full h-full object-cover opacity-50 "
           />
-          <li className="list-none font-semibold jersey-10-regular tracking-widest hover:text-red-400">
-            <a href="about-us">Home</a>
-          </li>
-          <li className="list-none font-semibold jersey-10-regular tracking-widest hover:text-red-400">
-            <a href="about-us"></a>About Us
-          </li>
-          <li className="list-none font-semibold jersey-10-regular tracking-widest hover:text-red-400">
-            <a href="#"></a>Individuals
-          </li>
-          <li className="list-none font-semibold jersey-10-regular tracking-widest hover:text-red-400">
-            <a href="#"></a>Corporate
-          </li>
-          <li className="list-none font-semibold jersey-10-regular tracking-widest hover:text-red-400">
-            <a href="#"></a>Contact Us
-          </li>
-          <li className="list-none font-semibold jersey-10-regular tracking-widest hover:text-red-400">
-            <a href="#"></a>Blogs
-          </li>
+           {navArray.map((navData, index) => {
+              return (
+                <li
+                  className={`list-none    hover:text-red-400 jersey-10-regular text-xl font-bold `}
+        
+    
+                >
+                  <div
+                    onClick={() => {
+                      pathname !== "/" && router.push("/");
+                      setSelectedNavLink(`${navData?.path}`);
+                      handleToggle();
+                    }}
+                  >
+                    <span
+                      className={`${noto_sans.className} cursor-pointer text-lg sm:text-xl md:text-2xl`}
+                    >
+                      {navData?.title}
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
         </nav>
       </div>
     </>

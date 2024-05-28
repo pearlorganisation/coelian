@@ -11,6 +11,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
+import { Trans, useTranslation } from "react-i18next";
+
 // ----------------------------------------------------------------------------------------------------------
 
 const Footer = () => {
@@ -19,6 +21,9 @@ const Footer = () => {
   // ------------------------------------------------Hooks----------------------------------------------------
   const router = useRouter();
   const { setSelectedIndex } = useContext(RootContext);
+  const {i18n } = useTranslation();
+
+  
   // ----------------------------------------------------------------------------------------------------------
   return (
     <>
@@ -31,7 +36,8 @@ const Footer = () => {
               </div>
 
               <p className="text-white text-center p-2 text-sm md:text-xl">
-                Make the right data-driven decision that move your business.
+                
+                <Trans i18nKey="pages.footer.title"></Trans>
               </p>
             </div>
           </div>
@@ -39,18 +45,17 @@ const Footer = () => {
           <div className="flex justify-around w-full flex-wrap">
             <div className="flex flex-col items-center justify-center p-5 md:text-xl md:ml-4">
               <h4 className="text-[#7fb4ab] font-mono text-md font-extrabold">
-                NO CREDIT CARD REQUIRED
-              </h4>
+              <Trans i18nKey="pages.footer.body.part1.t1"></Trans>              </h4>
 
               <h1 className=" text-[#a0a0a0] text-center text-md">
-                Start using Tokyo Immo today.
+              <Trans i18nKey="pages.footer.body.part1.t2"></Trans>  
               </h1>
 
               <div className="mailer flex mt-4">
                 <input
                   type="email"
                   id="email"
-                  placeholder="Your Email"
+                  placeholder= {<Trans i18nKey="pages.footer.body.part1.t3" />}
                   className=" bg-transparent border-b-2 border-1  outline-none text-blue-200"
                 ></input>
                 <SiMinutemailer size={30} style={{ color: "white" }} />
@@ -60,10 +65,10 @@ const Footer = () => {
             <div className="grid grid-cols-2 mt-2 content-center items-center text-sm text-[#d0d3d8] md:text-xl">
               <div>
                 <p>
-                  <a href="#">About</a>
+                  <a href="#"> <Trans i18nKey="pages.footer.body.part2.about"></Trans>  </a>
                 </p>
                 <p>
-                  <Link href="#">Jobs </Link>
+                  <Link href="#"><Trans i18nKey="pages.footer.body.part2.jobs"></Trans> </Link>
                 </p>
                 <p>
                   <button
@@ -72,19 +77,19 @@ const Footer = () => {
                       setSelectedIndex(null);
                     }}
                   >
-                    Services
+                    <Trans i18nKey="pages.footer.body.part2.services"></Trans>
                   </button>
                 </p>
               </div>
               <div>
                 <p>
-                  <a href="#">Terms and Conditions </a>
+                  <a href="#"><Trans i18nKey="pages.footer.body.part2.terms_and_condition"></Trans> </a>
                 </p>
                 <p>
-                  <a href="#">Privacy Policy </a>{" "}
+                  <a href="#"><Trans i18nKey="pages.footer.body.part2.privacy_policy"></Trans> </a>{" "}
                 </p>
                 <p>
-                  <a href="#">Cookie Policy </a>
+                  <a href="#"><Trans i18nKey="pages.footer.body.part2.cookie_policy"></Trans> </a>
                 </p>
               </div>
             </div>
@@ -102,9 +107,10 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="text-white">© 2022 Owned by Tokyoimmo.</div>
+          <div className="text-white">© 2022 <Trans i18nKey="pages.footer.body.owned"/> Tokyoimmo.</div>
         </div>
       </footer>
+      
     </>
   );
 };
