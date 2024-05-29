@@ -30,9 +30,7 @@ const RootContextProvider = ({ children }) => {
   // -------------------------------------------------States----------------------------------------------------
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectedNavLink, setSelectedNavLink] = useState("home");
-  // const [databaseData,setDatabase] = useState(dbData);
   const [webLang, setWebLang] = useState(initialLangData);
-  // console.log(dbData);
 
   // ----------------------------------------------------------------------------------------------------------
   // -------------------------------------------------Hooks----------------------------------------------------
