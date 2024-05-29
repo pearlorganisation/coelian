@@ -21,12 +21,12 @@ const noto_sans = Noto_Sans({
   adjustFontFallback: false,
 });
 
-function Header({}, ref) {
+function Header({ }, ref) {
 
   // -------------------------------------------------States-------------------------------------------
   const [navHam, setNavHam] = useState(false);
-  
-  
+
+
   const navArray = [
     {
       title: <Trans i18nKey="pages.navbar.home"></Trans>,
@@ -41,9 +41,9 @@ function Header({}, ref) {
     { title: <Trans i18nKey="pages.navbar.contact"></Trans>, path: "contactUs" },
   ];
 
-  
-  
-  
+
+
+
 
   const router = useRouter();
 
@@ -61,7 +61,7 @@ function Header({}, ref) {
 
   return (
     <>
-    <Fab/>
+      <Fab />
       <div className="relative hidden  sm:block h-[100px] z-[99] ">
         <style jsx="true">{`
           .roboto-regular {
@@ -87,11 +87,11 @@ function Header({}, ref) {
             {navArray.map((navData, index) => {
               return (
                 <li
-                  className={`list-none   hover:border-blue-600 hover:text-blue-400 ${
-                    selectedIndex === index
-                      ? "border-t-[0.2rem] border-blue-600 text-blue-900 "
-                      : "border-transparent"
-                  }`}
+                  key={index}
+                  className={`list-none   hover:border-blue-600 hover:text-blue-400 ${selectedIndex === index
+                    ? "border-t-[0.2rem] border-blue-600 text-blue-900 "
+                    : "border-transparent"
+                    }`}
                 >
                   <div
                     onClick={() => {
@@ -110,9 +110,9 @@ function Header({}, ref) {
             })}
             {/*------------------ Language Flag Component---------------  */}
             <div className="flex justify-center items-center">
-            <LangFlag />
+              <LangFlag />
             </div>
-            
+
 
           </nav>
         </div>
@@ -123,37 +123,37 @@ function Header({}, ref) {
         <Hamburger toggled={navHam} toggle={handleToggle} duration={0.9} />
 
         <nav
-          className={`relative flex gap-6  text-[2rem] justify-center flex-col overflow-hidden  transition-all  items-center bg-cover bg-no-repeat bg-center  roboto-regular  w-full ${
-            navHam ? "h-[100vh]" : "h-[0vh] "
-          }  `}
+          className={`relative flex gap-6  text-[2rem] justify-center flex-col overflow-hidden  transition-all  items-center bg-cover bg-no-repeat bg-center  roboto-regular  w-full ${navHam ? "h-[100vh]" : "h-[0vh] "
+            }  `}
         >
           <Image
             src={mobileNavImg}
             className=" absolute top-0 left-0 -z-10 w-full h-full object-cover opacity-50 "
           />
-           {navArray.map((navData, index) => {
-              return (
-                <li
-                  className={`list-none    hover:text-red-400 jersey-10-regular text-xl font-bold `}
-        
-    
+          {navArray.map((navData, index) => {
+            return (
+              <li
+                key={index}
+                className={`list-none    hover:text-red-400 jersey-10-regular text-xl font-bold `}
+
+
+              >
+                <div
+                  onClick={() => {
+                    pathname !== "/" && router.push("/");
+                    setSelectedNavLink(`${navData?.path}`);
+                    handleToggle();
+                  }}
                 >
-                  <div
-                    onClick={() => {
-                      pathname !== "/" && router.push("/");
-                      setSelectedNavLink(`${navData?.path}`);
-                      handleToggle();
-                    }}
+                  <span
+                    className={`${noto_sans.className} cursor-pointer text-lg sm:text-xl md:text-2xl`}
                   >
-                    <span
-                      className={`${noto_sans.className} cursor-pointer text-lg sm:text-xl md:text-2xl`}
-                    >
-                      {navData?.title}
-                    </span>
-                  </div>
-                </li>
-              );
-            })}
+                    {navData?.title}
+                  </span>
+                </div>
+              </li>
+            );
+          })}
         </nav>
       </div>
     </>

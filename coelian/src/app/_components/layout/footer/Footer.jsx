@@ -21,9 +21,9 @@ const Footer = () => {
   // ------------------------------------------------Hooks----------------------------------------------------
   const router = useRouter();
   const { setSelectedIndex } = useContext(RootContext);
-  const {i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
-  
+
   // ----------------------------------------------------------------------------------------------------------
   return (
     <>
@@ -36,7 +36,7 @@ const Footer = () => {
               </div>
 
               <p className="text-white text-center p-2 text-sm md:text-xl">
-                
+
                 <Trans i18nKey="pages.footer.title"></Trans>
               </p>
             </div>
@@ -45,17 +45,17 @@ const Footer = () => {
           <div className="flex justify-around w-full flex-wrap">
             <div className="flex flex-col items-center justify-center p-5 md:text-xl md:ml-4">
               <h4 className="text-[#7fb4ab] font-mono text-md font-extrabold">
-              <Trans i18nKey="pages.footer.body.part1.t1"></Trans>              </h4>
+                <Trans i18nKey="pages.footer.body.part1.t1"></Trans>              </h4>
 
               <h1 className=" text-[#a0a0a0] text-center text-md">
-              <Trans i18nKey="pages.footer.body.part1.t2"></Trans>  
+                <Trans i18nKey="pages.footer.body.part1.t2"></Trans>
               </h1>
 
               <div className="mailer flex mt-4">
                 <input
                   type="email"
                   id="email"
-                  placeholder= {<Trans i18nKey="pages.footer.body.part1.t3" />}
+                  placeholder={<Trans i18nKey="pages.footer.body.part1.t3" />}
                   className=" bg-transparent border-b-2 border-1  outline-none text-blue-200"
                 ></input>
                 <SiMinutemailer size={30} style={{ color: "white" }} />
@@ -96,7 +96,7 @@ const Footer = () => {
 
             <div className="md:flex md:flex-col">
               <div className="text-white p-1 flex flex-col items-center mt-2">
-                <h1>Let's chat !</h1>
+                <h1>Let&apos;s chat !</h1>
                 <h1>hi@avo.app</h1>
               </div>
               <div className="flex gap-6 p-2 mt-2 text-white">
@@ -107,10 +107,10 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="text-white">© 2022 <Trans i18nKey="pages.footer.body.owned"/> Tokyoimmo.</div>
+          <div className="text-white">© 2022 <Trans i18nKey="pages.footer.body.owned" /> Tokyoimmo.</div>
         </div>
       </footer>
-      
+
     </>
   );
 };
