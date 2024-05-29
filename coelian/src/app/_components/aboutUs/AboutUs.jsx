@@ -1,6 +1,7 @@
 "use client";
 // -----------------------------------------Imports--------------------------------------------
 import React, { forwardRef, useImperativeHandle, useRef } from "react";
+
 import AboutUsImg from "../../_assets/images/AboutUsImg.jpg";
 import Image from "next/image";
 import { Trans, useTranslation } from "react-i18next";
@@ -13,7 +14,7 @@ const AboutUs = (props, ref) => {
   // --------------------------------------------------------------------------------------------
   // -----------------------------------------Hooks--------------------------------------------
   const aboutUsRef = useRef();
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   console.log("about is rendering")
 
   useImperativeHandle(

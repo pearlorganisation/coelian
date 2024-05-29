@@ -3,7 +3,6 @@
 import { useContext, useEffect, useRef } from "react";
 import AboutUs from "../../aboutUs/AboutUs";
 import Home from "../../home/Home";
-import Individuals from "../../individuals/Individuals";
 import Corporate from "../../corporate/Corporate";
 import ContactUs from "../../contactUs/ContactUs";
 import Blogs from "../../blogs/Blogs";
@@ -19,7 +18,6 @@ export default function DefaultLayout({ params, children }) {
   // -----------------------------------------------Hooks------------------------------------------------
   const homeRef = useRef();
   const aboutUsRef = useRef();
-  const individualsRef = useRef();
   const corporateRef = useRef();
   const blogsRef = useRef();
   const contactUsRef = useRef();
@@ -27,7 +25,6 @@ export default function DefaultLayout({ params, children }) {
   const navCompArray = [
     homeRef,
     aboutUsRef,
-    individualsRef,
     corporateRef,
     blogsRef,
     contactUsRef,
@@ -36,10 +33,9 @@ export default function DefaultLayout({ params, children }) {
   const navObj = {
     home: 0,
     aboutUs: 1,
-    individuals: 2,
-    corporate: 3,
-    blogs: 4,
-    contactUs: 5,
+    corporate: 2,
+    blogs: 3,
+    contactUs: 4,
   };
 
   const { setSelectedIndex, selectedNavLink } = useContext(RootContext);
@@ -59,9 +55,6 @@ export default function DefaultLayout({ params, children }) {
     },
     aboutUs: () => {
       viewScroller(aboutUsRef);
-    },
-    individuals: () => {
-      viewScroller(individualsRef);
     },
     corporate: () => {
       viewScroller(corporateRef);
@@ -104,15 +97,13 @@ export default function DefaultLayout({ params, children }) {
   return (
     <>
       <Home ref={homeRef} />
-      <TrustedBy/>
+      <TrustedBy />
       <AboutUs ref={aboutUsRef} />
-      <Individuals ref={individualsRef} />
       <Corporate ref={corporateRef} />
       <Blogs ref={blogsRef} />
       <ContactUs ref={contactUsRef} />
 
       {/* <main>{children}</main> */}
-      
     </>
   );
 }

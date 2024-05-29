@@ -2,6 +2,7 @@
 // -----------------------------------------------Imports--------------------------------------------------
 import { forwardRef, useImperativeHandle, useRef } from "react";
 import { useForm } from "react-hook-form";
+import { Trans, useTranslation } from "react-i18next";
 // --------------------------------------------------------------------------------------------------------
 
 const ContactUs = (props, ref) => {
@@ -24,7 +25,11 @@ const ContactUs = (props, ref) => {
       };
     },
     []
-  );
+  );  
+  const {i18n} = useTranslation();
+
+  const formLabels  = i18n.t('contactUs.content',{returnObjects:true});
+  
   // --------------------------------------------------------------------------------------------------------
   // ---------------------------------------------Functions--------------------------------------------------
   // --------------------------------------------------------------------------------------------------------
@@ -44,9 +49,9 @@ const ContactUs = (props, ref) => {
 
         <form className="p-5" onSubmit={handleSubmit(() => {})}>
           <div className="md:text-[1.2rem] text-[1.2rem]  text-white flex justify-center items-center flex-col font-semibold font-mono">
-            <h1 className="text-3xl text-white">Contact Us </h1>
+            <h1 className="text-3xl text-white">{formLabels?.title} </h1>
             <p className="text-center text-gray-200">
-              Fill out the details for information
+            {formLabels?.miniTitle}
             </p>
           </div>
 
@@ -54,7 +59,7 @@ const ContactUs = (props, ref) => {
             <input
               className="glass w-full p-2  placeholder-gray-950  text-black"
               id="name"
-              placeholder="Name"
+              placeholder={formLabels?.form?.name}
               {...register("name")}
             />
           </div>
@@ -62,7 +67,7 @@ const ContactUs = (props, ref) => {
             <input
               id="email"
               className="glass w-full p-2 placeholder-gray-950"
-              placeholder="Email"
+              placeholder={formLabels?.form?.email}
               {...register("email")}
             />
           </div>
@@ -71,7 +76,7 @@ const ContactUs = (props, ref) => {
             <textarea
               id="message"
               className="placeholder-gray-950 w-full p-2 glass"
-              placeholder="Message"
+              placeholder={formLabels?.form?.message}
               {...register("message")}
             />
           </div>
@@ -80,7 +85,7 @@ const ContactUs = (props, ref) => {
               className="border-2 p-2 rounded-md text-white font-bold tracking-widest  bg-red-500 border-transparent border-white "
               onClick={handleSubmit}
             >
-              SUBMIT
+              {formLabels?.form?.submitButton}
             </button>
           </div>
         </form>

@@ -1,3 +1,4 @@
+"use client"
 // --------------------------Imports --------------------------------------------------------------
 import { RootContext } from '@/app/_contexts/RootContext/RootContextProvider';
 import React, { useState } from 'react'

@@ -36,7 +36,6 @@ function Header({}, ref) {
       title: <Trans i18nKey="pages.navbar.about"></Trans>,
       path: "aboutUs",
     },
-    { title: <Trans i18nKey="pages.navbar.individual"></Trans>, path: "individuals" },
     { title: <Trans i18nKey="pages.navbar.corporate"></Trans>, path: "corporate" },
     { title: <Trans i18nKey="pages.navbar.blog"></Trans>, path: "blogs" },
     { title: <Trans i18nKey="pages.navbar.contact"></Trans>, path: "contactUs" },
@@ -77,13 +76,13 @@ function Header({}, ref) {
             font-style: normal;
           }
         `}</style>
-        <div className="fixed top:0 left-0 right-0  h-[100px] bg-white flex items-center justify-around">
-          <div>
+        <div className="fixed top:0 left-0 right-0  h-[100px] bg-white flex items-center  justify-around font-thin md:font-semibold">
+          <div className="flex justify-center items-center">
             <Image src={logo} alt="logo" width={100} />
           </div>
 
           <nav
-            className={` flex gap-4 text-[25px] jersey-10-regular tracking-widest`}
+            className={` flex gap-4 sm:text-[25px] md:text-[15px] lg:text-[25px]  sm:mono lg:jersey-10-regular tracking-wide lg:tracking-widest`}
           >
             {navArray.map((navData, index) => {
               return (
@@ -101,7 +100,7 @@ function Header({}, ref) {
                     }}
                   >
                     <span
-                      className={`${noto_sans.className} cursor-pointer text-lg sm:text-xl md:text-2xl`}
+                      className={`${noto_sans.className} cursor-pointer text-lg  md:text-base lg:text-2xl`}
                     >
                       {navData?.title}
                     </span>
@@ -110,7 +109,10 @@ function Header({}, ref) {
               );
             })}
             {/*------------------ Language Flag Component---------------  */}
-                  <LangFlag />
+            <div className="flex justify-center items-center">
+            <LangFlag />
+            </div>
+            
 
           </nav>
         </div>
