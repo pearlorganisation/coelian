@@ -30,7 +30,7 @@ export default function TrustedBy() {
       
      <div className="flex flex-col  justify-between gap-4  ">
         <i className="flex justify-center my-3 items-center font-bold text-4xl">
-          <Trans i18nKey="pages.trustedBy.title"></Trans>
+          {i18n.t("trustedBy.title")}
         </i>
 
         <div className="flex flex-col  sm:flex-row gap-4 m-1 mb-4 justify-center items-center">

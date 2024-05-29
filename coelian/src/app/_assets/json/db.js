@@ -47,7 +47,7 @@ const db = {
           body: "Coelein looks back on his journey in Japan: 'After doing an exchange program at Okayama University and returning to France to validate my bachelor's degree...",
         },
       ],
-      j: [
+      ja: [
         {
           title: "vivreatokyo.comの東京不動産",
           body: "コエレインは、日本での自分の旅を振り返ります。「岡山大学での交換留学を終え、学士号を取得するためにフランスに戻り...",

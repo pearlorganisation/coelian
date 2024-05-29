@@ -37,7 +37,7 @@ const Footer = () => {
 
               <p className="text-white text-center p-2 text-sm md:text-xl">
 
-                <Trans i18nKey="pages.footer.title"></Trans>
+                <Trans i18nKey="footer.title"></Trans>
               </p>
             </div>
           </div>
@@ -45,17 +45,17 @@ const Footer = () => {
           <div className="flex justify-around w-full flex-wrap">
             <div className="flex flex-col items-center justify-center p-5 md:text-xl md:ml-4">
               <h4 className="text-[#7fb4ab] font-mono text-md font-extrabold">
-                <Trans i18nKey="pages.footer.body.part1.t1"></Trans>              </h4>
+                <Trans i18nKey="footer.body.part1.t1"></Trans>              </h4>
 
               <h1 className=" text-[#a0a0a0] text-center text-md">
-                <Trans i18nKey="pages.footer.body.part1.t2"></Trans>
+                <Trans i18nKey="footer.body.part1.t2"></Trans>
               </h1>
 
               <div className="mailer flex mt-4">
                 <input
                   type="email"
                   id="email"
-                  placeholder={<Trans i18nKey="pages.footer.body.part1.t3" />}
+                  placeholder={i18n.t("footer.body.part1.t3")}
                   className=" bg-transparent border-b-2 border-1  outline-none text-blue-200"
                 ></input>
                 <SiMinutemailer size={30} style={{ color: "white" }} />
@@ -65,10 +65,10 @@ const Footer = () => {
             <div className="grid grid-cols-2 mt-2 content-center items-center text-sm text-[#d0d3d8] md:text-xl">
               <div>
                 <p>
-                  <a href="#"> <Trans i18nKey="pages.footer.body.part2.about"></Trans>  </a>
+                  <a href="#"> <Trans i18nKey="footer.body.part2.about"></Trans>  </a>
                 </p>
                 <p>
-                  <Link href="#"><Trans i18nKey="pages.footer.body.part2.jobs"></Trans> </Link>
+                  <Link href="#"><Trans i18nKey="footer.body.part2.jobs"></Trans> </Link>
                 </p>
                 <p>
                   <button
@@ -77,19 +77,19 @@ const Footer = () => {
                       setSelectedIndex(null);
                     }}
                   >
-                    <Trans i18nKey="pages.footer.body.part2.services"></Trans>
+                    <Trans i18nKey="footer.body.part2.services"></Trans>
                   </button>
                 </p>
               </div>
               <div>
                 <p>
-                  <a href="#"><Trans i18nKey="pages.footer.body.part2.terms_and_condition"></Trans> </a>
+                  <a href="#"><Trans i18nKey="footer.body.part2.terms_and_condition"></Trans> </a>
                 </p>
                 <p>
-                  <a href="#"><Trans i18nKey="pages.footer.body.part2.privacy_policy"></Trans> </a>{" "}
+                  <a href="#"><Trans i18nKey="footer.body.part2.privacy_policy"></Trans> </a>{" "}
                 </p>
                 <p>
-                  <a href="#"><Trans i18nKey="pages.footer.body.part2.cookie_policy"></Trans> </a>
+                  <a href="#"><Trans i18nKey="footer.body.part2.cookie_policy"></Trans> </a>
                 </p>
               </div>
             </div>
@@ -107,7 +107,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="text-white">© 2022 <Trans i18nKey="pages.footer.body.owned" /> Tokyoimmo.</div>
+          <div className="text-white">© 2022 <Trans i18nKey="footer.body.owned" /> Tokyoimmo.</div>
         </div>
       </footer>
 
