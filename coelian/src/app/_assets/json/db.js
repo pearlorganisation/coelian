@@ -95,6 +95,11 @@ const db = {
 
     },
   },
+  partner:{
+    en:"Partner",
+    fr:"Partenaires",
+    ja:"パートナー",
+  }
 };
 
 

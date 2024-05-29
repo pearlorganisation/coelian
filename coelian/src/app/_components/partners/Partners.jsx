@@ -2,6 +2,7 @@
 import currenciesImg from "../../_assets/images/currendirect.png";
 import Image from "next/image";
 import Link from "next/link";
+import i18n from "@/app/_utils/globalization/i18n/i18n";
 // ------------------------------------------------------------------------------------------------------
 
 const Partners = () => {
@@ -9,7 +10,7 @@ const Partners = () => {
     <>
       <div className="partners relative p-10 flex justify-center items-center">
         <div className="leftContent flex justify-center">
-          <h1 className="font-bold text-3xl sm:text-4xl p-10 italic">Partners</h1>
+          <h1 className="font-bold text-3xl sm:text-4xl p-10 italic">{i18n.t("partner.title")}</h1>
         </div>
         <div className="rightContent p-10 border-2 sm:border-4 border-l-red-500 border-transparent">
           <div className="partnerImg  w-[180px] sm:w-[250px] ">

@@ -91,6 +91,9 @@ i18n
             trustedBy: {
               title: "TrustedBy",
             },
+            partner:{
+              title:database.partner.en
+            }
           },
         },
       
@@ -157,6 +160,9 @@ i18n
             trustedBy: {
               title: "Fait confiance par.",
             },
+            partner:{
+              title:database.partner.fr
+            }
           },
         },
     
@@ -225,6 +231,9 @@ i18n
           trustedBy: {
             title: "信頼されています",
           },
+          partner:{
+            title:database.partner.ja
+          }
         },
       },
     },
