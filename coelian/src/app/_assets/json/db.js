@@ -1,9 +1,18 @@
+import about_us_Image from "../images/about_us/AboutUsImg.jpg";
+
+
 const db = {
-  bannerImg:
+  auth:{
+    email:"",
+    password:"",
+  },
+  websiteLogo:"../images/logo.png",
+  bannerImgDesktop:
     "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  bannerImgMobile:"https://images.unsplash.com/photo-1593000666643-c7b641bbecaf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
   aboutUs: {
-    Img: "",
+    Img: about_us_Image,
     content: {
       en: "TOKYO IMMO offers you apartments, houses or buildings that meet your expectations and helps you get off to a smooth start in Japan. We'll work with you to find the real estate that will give you the peace of mind you're looking for in Japan. Each property is unique. Within the same building, between two properties with identical structures or two adjoining apartments, everything will be different if the location is not exactly the same: sunshine, perception of noise, wind flow... Among the wealth of information available, TOKYO IMMO will do its utmost to find the right property for you. We don't just show you apartments, houses or buildings, we can also take care of the formalities involved in subscribing to the various housing-related services, to help you prepare for your move",
 
@@ -12,7 +21,6 @@ const db = {
       ja: "TOKYO IMMOは、あなたの期待に応えるアパート、家屋、または建物を提供し、日本でのスムーズなスタートを支援します。私たちは、日本で求める安心を提供する不動産を見つけるために、あなたと協力します。すべての物件はユニークです。同じ建物内でも、構造が同一の2つの物件や隣接する2つのアパート間でも、位置が完全に同じでない場合、日当たり、騒音の感じ方、風の流れなどが異なります。利用可能な豊富な情報の中から、TOKYO IMMOはあなたに最適な物件を見つけるために最善を尽くします。アパート、家屋、または建物を見せるだけでなく、引越し準備のために様々な住宅関連サービスの申し込み手続きをお手伝いすることもできます。",
     },
   },
-
   service: {
     office:
       "Our comprehensive search service specializes in finding the perfect office spaces for your business, ensuring a seamless transition into your new location.",
@@ -21,7 +29,6 @@ const db = {
     staffing_service:
       "And for businesses expanding globally, our dedicated staff housing search service helps you locate comfortable and convenient accommodations for your employees",
   },
-
   blogs: {
     images:["https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-01.jpg","https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-02.jpg"], 
     content: {
@@ -59,7 +66,6 @@ const db = {
       ],
     },
   },
-
   contactUs: {
     content: {
       en:{

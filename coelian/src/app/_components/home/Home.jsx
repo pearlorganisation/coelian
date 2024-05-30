@@ -2,6 +2,8 @@
 // --------------------------------------------------Imports----------------------------------------------
 import { forwardRef, useImperativeHandle, useState, useRef } from "react";
 import Image from "next/image";
+import database from "../../_assets/json/db";
+
 import mobileNavImg from "../../_assets/images/mobileNavImg.jpg";
 // --------------------------------------------------------------------------------------------------------
 
@@ -22,6 +24,8 @@ function Home(props, ref) {
     },
     []
   );
+
+  console.log(database.bannerImgMobile);
   // ------------------------------------------------------------------------------------------------
   // -----------------------------------------------Functions-------------------------------------------
   // -----------------------------------------------useEffects-------------------------------------------
@@ -31,13 +35,23 @@ function Home(props, ref) {
   return (
     <>
       <div
-        className={`home hidden  relative sm:flex gap-6  text-[2rem] justify-center flex-col overflow-hidden  transition-all  items-center bg-cover bg-no-repeat bg-center  roboto-regular  w-full z-10`}
+        className={`home hidden   relative md:flex gap-6  text-[2rem] justify-center flex-col overflow-hidden  transition-all  items-center bg-cover bg-no-repeat bg-center  roboto-regular  w-full z-10`}
         ref={homeRef}
       >
         <img
-          src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src={database.bannerImgDesktop}
           alt="headerImg"
           className="object-cover h-[50vh] sm:h-[97vh] w-full"
+        />
+      </div>
+
+      <div
+        className={`home  md:hidden flex gap-6 overflow-hidden transition-all  items-center bg-cover bg-no-repeat bg-center`}
+      >
+        <img
+          src={database.bannerImgMobile}
+          alt="bannerImgMobile"
+          className="object-cover h-[90vh] w-full"
         />
       </div>
     </>

@@ -5,12 +5,9 @@ import Hamburger from "hamburger-react";
 import Image from "next/image";
 import logo from "../../../_assets/images/logo.png";
 import mobileNavImg from "../../../_assets/images/mobileNavImg.jpg";
-import Link from "next/link";
 import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
-import { Jersey_10 } from "next/font/google";
 import { useRouter, usePathname } from "next/navigation";
 import { Noto_Sans } from "next/font/google";
-import Fab from "../../fab/Fab";
 import { Trans } from "react-i18next";
 import LangFlag from "../../langFlag/LangFlag";
 // ------------------------------------------------------------------------------------------------
@@ -61,8 +58,8 @@ function Header({ }, ref) {
 
   return (
     <>
-      <Fab />
-      <div className="relative hidden  sm:block h-[100px] z-[99] ">
+      {/* <Fab /> */}
+      <div className="relative hidden  md:block h-[100px] z-[99] ">
         <style jsx="true">{`
           .roboto-regular {
             font-family: "Roboto", sans-serif;
@@ -119,8 +116,10 @@ function Header({ }, ref) {
       </div>
       {/* hamNavbar */}
 
-      <div className="sm:hidden flex flex-col items-end text-[1.5rem]  z-50 ">
+      <div className="md:hidden flex flex-col items-end text-[1.5rem]  z-50 ">
         <Hamburger toggled={navHam} toggle={handleToggle} duration={0.9} />
+        
+          
 
         <nav
           className={`relative flex gap-6  text-[2rem] justify-center flex-col overflow-hidden  transition-all  items-center bg-cover bg-no-repeat bg-center  roboto-regular  w-full ${navHam ? "h-[100vh]" : "h-[0vh] "
@@ -155,6 +154,7 @@ function Header({ }, ref) {
             );
           })}
         </nav>
+
       </div>
     </>
   );
