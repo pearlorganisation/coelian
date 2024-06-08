@@ -1,24 +1,27 @@
 "use client";
 // -----------------------------------------------Imports--------------------------------------------------
-import { forwardRef, useContext, useImperativeHandle, useRef } from "react";
-import { motion } from "framer-motion";
-import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
-import { Trans, useTranslation } from "react-i18next";
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Pagination, Navigation } from "swiper/modules";
+import axios from "axios";
 
 // --------------------------------------------------------------------------------------------------------
 const Blogs = (props, ref) => {
-  // -----------------------------------------------States--------------------------------------------------
-  // --------------------------------------------------------------------------------------------------------
-  // -----------------------------------------------Hooks--------------------------------------------------
+  const [blogsData, setBlogsData] = useState({
+    en: [],
+    fr: [],
+    ja: [],
+  });
+  const [blogsImages, setBlogsImages] = useState([]);
   const blogsRef = useRef();
-  const { selectedIndex, selectedNavLink } = useContext(RootContext);
   const { i18n } = useTranslation();
 
-  // --------------------------------------------------------------------------------------------------------
-  // ---------------------------------------------Functions--------------------------------------------------
-  // --------------------------------------------------------------------------------------------------------
-  // ---------------------------------------------useEffect--------------------------------------------------
-  // --------------------------------------------------------------------------------------------------------
   useImperativeHandle(
     ref,
     () => {
@@ -29,33 +32,80 @@ const Blogs = (props, ref) => {
     []
   );
 
-  // we are getting data from i18n to plot in our news card
-  const blogs = i18n.t("pages.blogs.content", { returnObjects: true });
-  const images = i18n.t("pages.blogs.images", { returnObjects: true });
+  useEffect(() => {
+    const fetchBlogsData = async () => {
+      try {
+        const response = await axios.get("https://coelien-default-rtdb.firebaseio.com/Blogs.json");
+        const data = response.data;
+        setBlogsImages(data.blogImages);
+
+        // Update i18n resources with fetched data
+        i18n.addResourceBundle('en', 'translation', {
+          pages: {
+            blogs: {
+              content: data?.en,
+            },
+          },
+        }, true, true);
+
+        i18n.addResourceBundle('fr', 'translation', {
+          pages: {
+            blogs: {
+              content: data?.fr,
+            },
+          },
+        }, true, true);
+
+        i18n.addResourceBundle('ja', 'translation', {
+          pages: {
+            blogs: {
+              content: data?.ja,
+            },
+          },
+        }, true, true);
+
+        setBlogsData(data); // Set the fetched data to the state
+      } catch (error) {
+        console.error("Error fetching blogs data:", error);
+      }
+    };
+
+    fetchBlogsData();
+  }, []);
+
+  const blogsContent = blogsData[i18n.language];
   const blogTitle = i18n.t("pages.blogs.title");
 
-
   return (
-    <div className="blogs  flex blogBackground justify-center" ref={blogsRef}>
-      <section class="pt-20 lg:pt-[120px] pb-10 lg:pb-20">
-      <div className="flex justify-center items-center">
-        <p className=" font-extrabold text-3xl">{blogTitle}</p>
-      </div>
-        <div className="container grid grid-cols-2 gap-4">
-        
-
-          {blogs?.map((blog, index) => (
-            <div key={index} className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div className="p-5">
-                
-
-                  <img src={images[index]} alt={blog.title} />
-                  <h1 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{blog.title}</h1>
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{blog.body}</p>
+    <div className="blogs flex blogBackground justify-center" ref={blogsRef}>
+      <section className="pt-20 lg:pt-[100px] pb-8 lg:pb-10">
+        <div className="flex justify-center items-center m-4 ">
+          <p className="font-extrabold text-3xl">{blogTitle}</p>
+        </div>
+        <div className="container">
+          <Swiper
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+            spaceBetween={1}
+            slidesPerView={2}
+          >
+            {blogsImages.length > 0 && blogsContent?.map((blog, index) => (
+              <SwiperSlide key={index} className="flex justify-center items-center">
+                <div className="max-w-sm bg-white w-fit mx-auto rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                  <div className="p-5 h-[400px]">
+                    <img src={blogsImages[index]} alt={blog.title} />
+                    <h1 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      {blog.title}
+                    </h1>
+                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                      {blog.body}
+                    </p>
+                  </div>
                 </div>
-             
-            </div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
     </div>

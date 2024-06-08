@@ -1,16 +1,17 @@
 "use client";
 // --------------------------------------------------Imports----------------------------------------------
-import { forwardRef, useImperativeHandle, useState, useRef } from "react";
+import { forwardRef, useImperativeHandle, useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import database from "../../_assets/json/db";
+import axios from "axios";
 
-import mobileNavImg from "../../_assets/images/mobileNavImg.jpg";
+
 // --------------------------------------------------------------------------------------------------------
 
 function Home(props, ref) {
   // -------------------------------------------------States-------------------------------------------
 
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [bannerImg,setBannerImg] = useState();
   // ------------------------------------------------------------------------------------------------
   // -------------------------------------------------Hooks-------------------------------------------
   const homeRef = useRef();
@@ -25,11 +26,22 @@ function Home(props, ref) {
     []
   );
 
-  console.log(database.bannerImgMobile);
   // ------------------------------------------------------------------------------------------------
   // -----------------------------------------------Functions-------------------------------------------
   // -----------------------------------------------useEffects-------------------------------------------
-  //   useEffect(() => {}, []);
+    useEffect(() => {
+      const fetchBannerImg = async ()=>{
+        
+      const res = await axios.get("https://coelien-default-rtdb.firebaseio.com/BannerImg.json");
+      console.log(res.data);
+      setBannerImg(res.data);
+
+
+
+
+      }
+      fetchBannerImg();
+    }, []);
   // ------------------------------------------------------------------------------------------------
 
   return (
@@ -39,9 +51,10 @@ function Home(props, ref) {
         ref={homeRef}
       >
         <img
-          src={database.bannerImgDesktop}
+          src={bannerImg?.desktopImg}
           alt="headerImg"
-          className="object-cover h-[50vh] sm:h-[97vh] w-full"
+          className="object-cover  h-[50vh] sm:h-[97vh] w-full"
+          fill ={true}
         />
       </div>
 
@@ -49,9 +62,10 @@ function Home(props, ref) {
         className={`home  md:hidden flex gap-6 overflow-hidden transition-all  items-center bg-cover bg-no-repeat bg-center`}
       >
         <img
-          src={database.bannerImgMobile}
+          src={bannerImg?.mobileImg}
           alt="bannerImgMobile"
           className="object-cover h-[90vh] w-full"
+          fill ={true}
         />
       </div>
     </>

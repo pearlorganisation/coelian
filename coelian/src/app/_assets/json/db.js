@@ -1,18 +1,16 @@
-import about_us_Image from "../images/about_us/AboutUsImg.jpg";
-
-
 const db = {
-  auth:{
-    email:"",
-    password:"",
+  auth: {
+    email: "",
+    password: "",
   },
-  websiteLogo:"../images/logo.png",
+  websiteLogo: "../images/logo.png",
   bannerImgDesktop:
     "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  bannerImgMobile:"https://images.unsplash.com/photo-1593000666643-c7b641bbecaf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  bannerImgMobile:
+    "https://images.unsplash.com/photo-1593000666643-c7b641bbecaf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
   aboutUs: {
-    Img: about_us_Image,
+    Img: "https://images.unsplash.com/photo-1611021296880-24a04cbe32e3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     content: {
       en: "TOKYO IMMO offers you apartments, houses or buildings that meet your expectations and helps you get off to a smooth start in Japan. We'll work with you to find the real estate that will give you the peace of mind you're looking for in Japan. Each property is unique. Within the same building, between two properties with identical structures or two adjoining apartments, everything will be different if the location is not exactly the same: sunshine, perception of noise, wind flow... Among the wealth of information available, TOKYO IMMO will do its utmost to find the right property for you. We don't just show you apartments, houses or buildings, we can also take care of the formalities involved in subscribing to the various housing-related services, to help you prepare for your move",
 
@@ -30,9 +28,14 @@ const db = {
       "And for businesses expanding globally, our dedicated staff housing search service helps you locate comfortable and convenient accommodations for your employees",
   },
   blogs: {
-    images:["https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-01.jpg","https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-02.jpg"], 
+    images: [
+      "https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-01.jpg",
+      "https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-02.jpg",
+      "https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-02.jpg",
+      "https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-01.jpg",
+    ],
+
     content: {
-       
       en: [
         {
           title: "Tokyo Immo on vivreatokyo.com",
@@ -42,14 +45,30 @@ const db = {
           title: "Tokyo Immo on Expat.org",
           body: "TOKYO IMMO offers you apartments, houses or buildings corresponding to customer expectations and assists them in getting off to a...",
         },
+        {
+          title: "Tokyo Immo on Expat.org",
+          body: "TOKYO IMMO offers you apartments, houses or buildings corresponding to customer expectations and assists them in getting off to a...",
+        },
+        {
+          title: "Tokyo Immo on vivreatokyo.com",
+          body: "Coelein looks back on his journey in Japan: 'After doing an exchange program at Okayama University and returning to France to validate my bachelor's degree...",
+        },
       ],
+    
       fr: [
         {
           title: "Tokyo Immo sur vivreatokyo.com",
           body: "Coelein revient sur son parcours au Japon : « Après avoir effectué un programme d'échange à l'université d'Okayama et être revenu en France pour valider...",
         },
         {
-    
+          title: "Tokyo Immo sur vivreatokyo.com",
+          body: "Coelein revient sur son parcours au Japon : « Après avoir effectué un programme d'échange à l'université d'Okayama et être revenu en France pour valider...",
+        },
+        {
+          title: "Tokyo Immo on vivreatokyo.com",
+          body: "Coelein looks back on his journey in Japan: 'After doing an exchange program at Okayama University and returning to France to validate my bachelor's degree...",
+        },
+        {
           title: "Tokyo Immo on vivreatokyo.com",
           body: "Coelein looks back on his journey in Japan: 'After doing an exchange program at Okayama University and returning to France to validate my bachelor's degree...",
         },
@@ -60,6 +79,14 @@ const db = {
           body: "コエレインは、日本での自分の旅を振り返ります。「岡山大学での交換留学を終え、学士号を取得するためにフランスに戻り...",
         },
         {
+          title: "vivreatokyo.comの東京不動産",
+          body: "コエレインは、日本での自分の旅を振り返ります。「岡山大学での交換留学を終え、学士号を取得するためにフランスに戻り...",
+        },
+        {
+          title: "Expat.orgの東京不動産",
+          body: "TOKYO IMMOは、お客様の期待に応えるアパート、家、または建物を提供し、お客様が円滑に移転するのを手伝います...",
+        },
+        {
           title: "Expat.orgの東京不動産",
           body: "TOKYO IMMOは、お客様の期待に応えるアパート、家、または建物を提供し、お客様が円滑に移転するのを手伝います...",
         },
@@ -68,45 +95,46 @@ const db = {
   },
   contactUs: {
     content: {
-      en:{
-        title:"Contact Us",
-        miniTitle:"Fill out the details for information",
-        form:{
-        name:"Name",
-        email:"Email",
-        message: "Message",
-        submitButton:"Submit",
-        }
+      en: {
+        title: "Contact Us",
+        miniTitle: "Fill out the details for information",
+        form: {
+          name: "Name",
+          email: "Email",
+          message: "Message",
+          submitButton: "Submit",
+        },
       },
-      fr:{
+      fr: {
         title: "Nous contacter",
         miniTitle: "Remplissez les détails pour obtenir des informations",
         form: {
           name: "Nom",
           email: "Email",
           message: "Message",
-          submitButton: "Envoyer"
-        }
+          submitButton: "Envoyer",
+        },
       },
-      ja:{
+      ja: {
         title: "お問い合わせ",
         miniTitle: "情報を入力してください",
         form: {
           name: "名前",
           email: "Eメール",
           message: "メッセージ",
-          submitButton: "送信"
-        }
+          submitButton: "送信",
+        },
       },
-
     },
   },
-  partner:{
-    en:"Partner",
-    fr:"Partenaires",
-    ja:"パートナー",
-  }
+  partner: {
+    en: "Partner",
+    fr: "Partenaires",
+    ja: "パートナー",
+  },
 };
+
+
 
 
 export default db;

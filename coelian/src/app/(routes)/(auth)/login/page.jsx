@@ -15,7 +15,7 @@ const Login = () => {
     ) {
       router.push("/admin");
     } else {
-      console.log("Wrong inputs !!");
+      alert("Entered Details are not Valid !!")
     }
     console.log(event.target.password.value);
   }

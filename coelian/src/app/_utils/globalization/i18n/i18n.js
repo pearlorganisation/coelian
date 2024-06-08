@@ -3,6 +3,13 @@ import { initReactI18next } from "react-i18next";
 import database from "../../../_assets/json/db.js";
 import Backend from "i18next-http-backend";
 import i18nextBrowserLanguagedetector from "i18next-browser-languagedetector";
+
+
+
+
+
+
+
 // don't want to use this?
 // have a look at the Quick start guide
 // for passing in lng and translations on init
@@ -36,7 +43,7 @@ i18n
           pages: {
             aboutUs: {
               title: "About Us",
-              description:database.aboutUs.content.en,
+              description:"",
             },
             navbar: {
               home: "Home",
@@ -61,8 +68,9 @@ i18n
             },
             blogs: {
             title:"Our Blogs",
-            content: database.blogs.content.en,
-            images:database.blogs.images,   
+            // content: database.blogs.content.en,
+            content: "",
+            images:"",   
             },
           },
             contactUs: {
@@ -92,7 +100,7 @@ i18n
               title: "TrustedBy",
             },
             partner:{
-              title:database.partner.en
+              title:"Partner"
             }
           },
         },
@@ -103,7 +111,7 @@ i18n
           pages: {
             aboutUs: {
               title: "À propos de nous",
-              description:database.aboutUs.content.en,
+              description:"",
             },
             navbar: {
               home: "Accueil",
@@ -130,8 +138,8 @@ i18n
 
             blogs: {
               title: "Nos Blogs",
-              content: database.blogs.content.fr,
-              images:database.blogs.images,
+              content: "",
+              images:"img",
               },
             },
             contactUs: {
@@ -161,7 +169,7 @@ i18n
               title: "Fait confiance par.",
             },
             partner:{
-              title:database.partner.fr
+              title:"Partenaires"
             }
           },
         },
@@ -173,7 +181,7 @@ i18n
             aboutUs: {
               title: "私たちについて",
               description:
-                "TOKYO IMMOは、あなたの期待に応えるアパート、家屋、または建物を提供し、日本でのスムーズなスタートを支援します。私たちは、日本で求める安心を提供する不動産を見つけるために、あなたと協力します。すべての物件はユニークです。同じ建物内でも、構造が同一の2つの物件や隣接する2つのアパート間でも、位置が完全に同じでない場合、日当たり、騒音の感じ方、風の流れなどが異なります。利用可能な豊富な情報の中から、TOKYO IMMOはあなたに最適な物件を見つけるために最善を尽くします。アパート、家屋、または建物を見せるだけでなく、引越し準備のために様々な住宅関連サービスの申し込み手続きをお手伝いすることもできます。",
+                "",
             },
             navbar: {
               home: "ホーム",
@@ -199,8 +207,8 @@ i18n
             },
             blogs: {
               title: "私たちのブログ",
-              content: database.blogs.content.ja,
-              images:database.blogs.images,
+              content: "",
+              images:"",
               },
 
           },
@@ -232,7 +240,7 @@ i18n
             title: "信頼されています",
           },
           partner:{
-            title:database.partner.ja
+            title:"パートナー"
           }
         },
       },
