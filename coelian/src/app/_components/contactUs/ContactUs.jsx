@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 // -----------------------------------------------Imports--------------------------------------------------
 import { forwardRef, useImperativeHandle, useRef } from "react";
 import { useForm } from "react-hook-form";
@@ -25,17 +26,38 @@ const ContactUs = (props, ref) => {
       };
     },
     []
-  );  
-  const {i18n} = useTranslation();
+  );
+  const { i18n } = useTranslation();
 
-  const formLabels  = i18n.t('contactUs.content',{returnObjects:true});
-  
+  const formLabels = i18n.t("contactUs.content", { returnObjects: true });
+
   // --------------------------------------------------------------------------------------------------------
   // ---------------------------------------------Functions--------------------------------------------------
   // --------------------------------------------------------------------------------------------------------
   // ---------------------------------------------useEffect--------------------------------------------------
   // --------------------------------------------------------------------------------------------------------
 
+  function onSubmit(data) {
+    console.log(data);
+
+    async function ContactUsSubmittion() {
+      const prevData = await axios.get("https://coelien-default-rtdb.firebaseio.com/contactDetails.json");
+      const contactDetails = prevData.data ? prevData.data : [];
+      console.log("Existing data:", contactDetails);
+
+      // Determine new index
+      const newIndex = contactDetails.length;
+
+      // Add new data with new index
+      contactDetails[newIndex] = data;
+
+      // Update the database
+      const res = await axios.put("https://coelien-default-rtdb.firebaseio.com/contactDetails.json", contactDetails);
+      console.log("Updated data:", res.data);
+    }
+
+    ContactUsSubmittion();
+  }
   return (
     <div
       className="contactUs flex justify-center items-center  bg-cover  h-[90vh]"
@@ -46,13 +68,10 @@ const ContactUs = (props, ref) => {
       ref={contactUsRef}
     >
       <div className="blurEffect m-2 md:m-0 w-[400px]">
-
-        <form className="p-5" onSubmit={handleSubmit(() => {})}>
+        <form className="p-5" onSubmit={handleSubmit(onSubmit)}>
           <div className="md:text-[1.2rem] text-[1.2rem]  text-white flex justify-center items-center flex-col font-semibold font-mono">
             <h1 className="text-3xl text-white">{formLabels?.title} </h1>
-            <p className="text-center text-gray-200">
-            {formLabels?.miniTitle}
-            </p>
+            <p className="text-center text-gray-200">{formLabels?.miniTitle}</p>
           </div>
 
           <div className="m-1 flex justify-center">

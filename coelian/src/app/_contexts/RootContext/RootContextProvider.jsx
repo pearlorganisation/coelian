@@ -2,7 +2,7 @@
 
 // -------------------------------------------------Imports----------------------------------------------------
 import { createContext, useState } from "react";
-// import dbData from "../../_assets/json/db.json";
+
 
 // ------------------------------------------------------------------------------------------------------------
 export const RootContext = createContext();
@@ -49,7 +49,7 @@ const RootContextProvider = ({ children }) => {
         setWebLang,
         webLang,
         langFlagData,
-        // databaseData,
+        
       }}
     >
       {children}

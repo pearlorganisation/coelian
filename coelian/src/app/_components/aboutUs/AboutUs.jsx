@@ -76,7 +76,7 @@ const AboutUs = (props, ref) => {
       <div className="flex flex-col md:flex-row gap-6 p-4 shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] rounded-2xl   justify-around  items-center py-10 my-10  w-[90%]">
         <div className="opacity-80 rounded-lg overflow-hidden  w-[60vw] sm:w-[40vw] border-2  ">
           
-          <img src={aboutUs.aboutUsImg} alt="about_us_img" />
+          <img src={aboutUs.aboutUsImg} alt="about_us_img" fill={"true"}/>
         </div>
 
         <div className="flex flex-col items-center justify-around gap-3 text-sm md:text-[1.1rem] font-semibold md:min-h-[400px] md:w-[40vw] ">

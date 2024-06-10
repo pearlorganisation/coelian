@@ -103,7 +103,7 @@ export default function DefaultLayout({ params, children }) {
       <Blogs ref={blogsRef} />
       <ContactUs ref={contactUsRef} />
 
-      {/* <main>{children}</main> */}
+     
     </>
   );
 }

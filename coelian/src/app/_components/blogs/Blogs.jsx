@@ -77,18 +77,31 @@ const Blogs = (props, ref) => {
   const blogTitle = i18n.t("pages.blogs.title");
 
   return (
-    <div className="blogs flex blogBackground justify-center" ref={blogsRef}>
+    <div className="blogs  blogBackground " ref={blogsRef}>
       <section className="pt-20 lg:pt-[100px] pb-8 lg:pb-10">
         <div className="flex justify-center items-center m-4 ">
           <p className="font-extrabold text-3xl">{blogTitle}</p>
         </div>
-        <div className="container">
+        <div className="container mx-auto">
           <Swiper
             navigation={true}
             modules={[Pagination, Navigation]}
             className="mySwiper"
-            spaceBetween={1}
-            slidesPerView={2}
+
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 5,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+            }}
           >
             {blogsImages.length > 0 && blogsContent?.map((blog, index) => (
               <SwiperSlide key={index} className="flex justify-center items-center">

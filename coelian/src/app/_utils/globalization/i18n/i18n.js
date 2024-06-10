@@ -101,7 +101,10 @@ i18n
             },
             partner:{
               title:"Partner"
-            }
+            },
+            language:{
+              lang:"Language"
+              },
           },
         },
       
@@ -170,7 +173,10 @@ i18n
             },
             partner:{
               title:"Partenaires"
-            }
+            },
+            language:{
+              lang:"Langue"
+              },
           },
         },
     
@@ -241,7 +247,12 @@ i18n
           },
           partner:{
             title:"パートナー"
-          }
+          },
+          language:{
+          lang:"言語"
+          },
+          
+         
         },
       },
     },

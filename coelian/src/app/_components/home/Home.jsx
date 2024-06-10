@@ -10,7 +10,7 @@ import axios from "axios";
 function Home(props, ref) {
   // -------------------------------------------------States-------------------------------------------
 
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  // const [selectedIndex, setSelectedIndex] = useState(0);
   const [bannerImg,setBannerImg] = useState();
   // ------------------------------------------------------------------------------------------------
   // -------------------------------------------------Hooks-------------------------------------------
@@ -54,7 +54,7 @@ function Home(props, ref) {
           src={bannerImg?.desktopImg}
           alt="headerImg"
           className="object-cover  h-[50vh] sm:h-[97vh] w-full"
-          fill ={true}
+     
         />
       </div>
 
@@ -65,7 +65,7 @@ function Home(props, ref) {
           src={bannerImg?.mobileImg}
           alt="bannerImgMobile"
           className="object-cover h-[90vh] w-full"
-          fill ={true}
+          
         />
       </div>
     </>

@@ -19,7 +19,7 @@ const Partners = () => {
               className=""
               target="_blank"
             >
-              <Image src={currenciesImg} className="w-full" />
+              <Image src={currenciesImg} alt="partners" className="w-full" />
             </Link>
           </div>
         </div>
