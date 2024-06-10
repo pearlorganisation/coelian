@@ -10,6 +10,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { Noto_Sans } from "next/font/google";
 import { Trans, useTranslation } from "react-i18next";
 import LangFlag from "../../langFlag/LangFlag";
+import Link from "next/link";
 // ------------------------------------------------------------------------------------------------
 
 const noto_sans = Noto_Sans({
@@ -75,7 +76,9 @@ function Header({}, ref) {
         `}</style>
         <div className="fixed top:0 left-0 right-0  h-[100px] bg-white flex items-center  justify-around font-thin md:font-semibold">
           <div className="flex justify-center items-center">
-            <Image src={logo} alt="logo" width={100} />
+            <Link href="/">
+              <Image src={logo} alt="logo" width={100} />
+            </Link>
           </div>
 
           <nav
@@ -151,8 +154,9 @@ function Header({}, ref) {
             );
           })}
           <div className="flex gap-2 justify-center items-center">
-
-            <p className="hover:text-red-400 jersey-10-regular text-3xl font-bold"><Trans i18nKey="language.lang"/> : </p> 
+            <p className="hover:text-red-400 jersey-10-regular text-3xl font-bold">
+              <Trans i18nKey="language.lang" /> :{" "}
+            </p>
             <LangFlag />
           </div>
         </nav>

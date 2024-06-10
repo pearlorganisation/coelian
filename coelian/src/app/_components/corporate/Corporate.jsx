@@ -1,11 +1,13 @@
 "use client";
+import axios from "axios";
 // -----------------------------------------------Imports--------------------------------------------------
-import { forwardRef, useImperativeHandle, useRef } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import { Trans, useTranslation } from "react-i18next";
 // --------------------------------------------------------------------------------------------------------
 
 const Corporate = (props, ref) => {
   // -----------------------------------------------States--------------------------------------------------
+
   // --------------------------------------------------------------------------------------------------------
   // -----------------------------------------------Hooks--------------------------------------------------
   const corporateRef = useRef();
@@ -24,6 +26,57 @@ const Corporate = (props, ref) => {
     },
     []
   );
+  useEffect(() => {
+    const fetchCorporateData = async () => {
+      try {
+        const response = await axios.get("https://coelien-default-rtdb.firebaseio.com/Corporate.json");
+        const data = response.data;
+
+        console.log(data);
+        // Update i18n resources with fetched data
+        i18n.addResourceBundle('en', 'translation', {
+          corporate: {
+            title: "Looking For Corporate Purchasing !!",
+            leftContent: "Own Your Office Today",
+            rightContent: "Looking for stores !! we have it",
+            listing: "listing",
+            content1: data?.en.office,
+            content2: data?.en.staffing,
+            content3: data?.en.store,
+          }
+        }, true, true);
+
+        i18n.addResourceBundle('fr', 'translation', {
+          corporate: {
+            title: "À la recherche d'achats corporatifs !!",
+            leftContent: "Possédez votre bureau dès aujourd'hui",
+            rightContent: "Vous cherchez des magasins !! nous l'avons",
+            listing: "liste",
+            content1: data?.fr.office,
+            content2: data?.fr.staffing,
+            content3: data?.fr.store,
+          }
+        }, true, true);
+
+        i18n.addResourceBundle('ja', 'translation', {
+          corporate: {
+            title: "法人購買をお探しですか！！",
+            leftContent: "今日、あなたのオフィスを所有してください",
+            rightContent: "店舗をお探しですか！！ 私たちが持っています",
+            listing: "リスト",
+            content1: data?.ja.office,
+            content2: data?.ja.staffing,
+            content3: data?.ja.store,
+          }
+        }, true, true);
+
+      } catch (error) {
+        console.error("Error fetching corporate data:", error);
+      }
+    };
+
+    fetchCorporateData();
+  }, [i18n]);
 
   return (
     <>
@@ -33,7 +86,7 @@ const Corporate = (props, ref) => {
       >
         <div className="flex justify-center items-center md:p-4 p-2 ">
           <h1 className="font-mono font-extrabold text-[1.2rem] text-center md:text-[2rem]">
-            <Trans i18nKey="pages.corporate.title"></Trans>
+            <Trans i18nKey="corporate.title" />
           </h1>
         </div>
 
@@ -48,15 +101,13 @@ const Corporate = (props, ref) => {
             <div className="absolute w-full h-full bg-black/40 flex justify-center items-center ">
               <div className=" flex gap-2 flex-col justify-center items-center text-base md:text-lg  text-white z-10 font-normal md:font-semibold">
                 <p>
-                  <Trans i18nKey="pages.corporate.leftContent"></Trans>
+                  <Trans i18nKey="corporate.leftContent"></Trans>
                 </p>
                 <p className="text-center text-md">
-                  Our comprehensive search service specializes in finding the
-                  perfect office spaces for your business, ensuring a seamless
-                  transition into your new location.
+                  <Trans i18nKey="corporate.content1" />
                 </p>
                 <button className=" bg-[#b7a16e] rounded-md w-[100px]">
-                  <Trans i18nKey="pages.corporate.listing"></Trans> (1)
+                  <Trans i18nKey="corporate.listing"></Trans> (1)
                 </button>
               </div>
             </div>
@@ -72,21 +123,18 @@ const Corporate = (props, ref) => {
             <div className="absolute w-full h-full bg-black/40 flex justify-center items-center ">
               <div className=" flex gap-2 flex-col items-center text-base md:text-lg text-white z-10 font-normal  md:font-semibold">
                 <p>
-                  <Trans i18nKey="pages.corporate.rightContent"></Trans>
+                  <Trans i18nKey="corporate.rightContent"></Trans>
                 </p>
                 <div className="text-center">
                   <p className="text-md">
-                    For retailers, we provide expert store location assistance
-                    to help you find the ideal spot to showcase your brand.
+                    <Trans i18nKey="corporate.content2" />
                   </p>
                   <p className="text-md">
-                    And for businesses expanding globally, our dedicated staff
-                    housing search service helps you locate comfortable and
-                    convenient accommodations for your employees.
+                    <Trans i18nKey="corporate.content3" />
                   </p>
                 </div>
                 <button className=" bg-[#b7a16e] rounded-md w-[100px]">
-                  <Trans i18nKey="pages.corporate.listing"></Trans> (1){" "}
+                  <Trans i18nKey="corporate.listing"></Trans> (1){" "}
                 </button>
               </div>
             </div>

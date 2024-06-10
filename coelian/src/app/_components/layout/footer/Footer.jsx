@@ -31,10 +31,18 @@ const Footer = () => {
         <div className="w-[100%] flex flex-col md:flex-row gap-1  justify-center  items-center  p-4 md:flex-wrap">
           <div className="md:flex md:flex-row md:w-[100%] justify-center items-center md:p-1 md:m-4">
             <div className="content flex flex-col justify-center items-center ">
-              <div className="img  md:block md:p-2">
+              
+              
+              
+              <div className="img  md:block md:p-2 cursor-pointer" >
+                <Link href="/">
                 <Image src={logo} alt={"Logo"} />
+                </Link>
+                
               </div>
 
+         
+              
               <p className="text-white text-center p-2 text-sm md:text-xl">
 
                 <Trans i18nKey="footer.title"></Trans>

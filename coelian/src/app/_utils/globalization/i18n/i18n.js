@@ -57,6 +57,9 @@ i18n
               leftContent: "Own Your Office Today",
               rightContent: "Looking for stores !! we have it",
               listing: "listing",
+              content1:"",
+              content2:"",
+              content3:"",
             },
             individual: {
               title: {
@@ -129,6 +132,9 @@ i18n
               leftContent: "Possédez votre bureau dès aujourd'hui",
               rightContent: "Vous cherchez des magasins !! nous l'avons",
               listing: "liste",
+              content1:"",
+              content2:"",
+              content3:"",
             },
             individual: {
               title: {
@@ -202,6 +208,9 @@ i18n
               leftContent: "今日、あなたのオフィスを所有してください",
               rightContent: "店舗をお探しですか！！ 私たちが持っています",
               listing: "リスト",
+              content1:"",
+              content2:"",
+              content3:"",
             },
             individual: {
               title: {
