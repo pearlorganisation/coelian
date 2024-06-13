@@ -86,7 +86,8 @@ function Header({}, ref) {
           >
             {navArray.map((navData, index) => {
               return (
-                <li
+                <div
+
                   key={index}
                   className={`list-none   hover:border-blue-600 hover:text-blue-400 ${
                     selectedIndex === index
@@ -106,7 +107,7 @@ function Header({}, ref) {
                       {navData?.title}
                     </span>
                   </div>
-                </li>
+                </div>
               );
             })}
             {/*------------------ Language Flag Component---------------  */}
@@ -133,7 +134,7 @@ function Header({}, ref) {
           />
           {navArray.map((navData, index) => {
             return (
-              <li
+              <div
                 key={index}
                 className={`list-none    hover:text-red-400 jersey-10-regular text-2xl font-bold `}
               >
@@ -150,13 +151,13 @@ function Header({}, ref) {
                     {navData?.title}
                   </span>
                 </div>
-              </li>
+              </div>
             );
           })}
           <div className="flex gap-2 justify-center items-center">
-            <p className="hover:text-red-400 jersey-10-regular text-3xl font-bold">
+            <div className="hover:text-red-400 jersey-10-regular text-3xl font-bold">
               <Trans i18nKey="language.lang" /> :{" "}
-            </p>
+            </div>
             <LangFlag />
           </div>
         </nav>

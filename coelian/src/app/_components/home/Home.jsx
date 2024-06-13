@@ -1,7 +1,6 @@
 "use client";
 // --------------------------------------------------Imports----------------------------------------------
 import { forwardRef, useImperativeHandle, useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import axios from "axios";
 
 
@@ -54,7 +53,7 @@ function Home(props, ref) {
           src={bannerImg?.desktopImg}
           alt="headerImg"
           className="object-cover  h-[50vh] sm:h-[97vh] w-full"
-     
+            
         />
       </div>
 

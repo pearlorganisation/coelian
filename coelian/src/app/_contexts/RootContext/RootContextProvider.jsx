@@ -4,6 +4,7 @@
 import { createContext, useState } from "react";
 
 
+
 // ------------------------------------------------------------------------------------------------------------
 export const RootContext = createContext();
 const langFlagData = [
@@ -22,7 +23,9 @@ const langFlagData = [
 ];
 // ------------------------------------------------------------------------------------------------------------
 const RootContextProvider = ({ children }) => {
-  const userDefaultLang = "en";
+  const supportedLanguages = ['en', 'ja', 'fr'];
+  const navigatorLang = navigator?.language || 'en';
+  const userDefaultLang = supportedLanguages.includes(navigatorLang) ? navigatorLang : 'en';  console.log(userDefaultLang);
   const initialLangData = {
     lang: userDefaultLang,
     flag: langFlagData?.find((item) => item?.lang === userDefaultLang)?.flag,
