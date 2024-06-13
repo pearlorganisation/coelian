@@ -1,7 +1,7 @@
 "use client";
 
 // -------------------------------------------------Imports----------------------------------------------------
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 
 
@@ -23,17 +23,28 @@ const langFlagData = [
 ];
 // ------------------------------------------------------------------------------------------------------------
 const RootContextProvider = ({ children }) => {
+
+  // -------------------------------------------------States----------------------------------------------------
+ 
+  const [isNavigator, setNavigator]=useState(null)
+
   const supportedLanguages = ['en', 'ja', 'fr'];
-  const navigatorLang = navigator?.language || 'en';
-  const userDefaultLang = supportedLanguages.includes(navigatorLang) ? navigatorLang : 'en';  console.log(userDefaultLang);
+  const navigatorLang = isNavigator;
+  const userDefaultLang = supportedLanguages.includes(navigatorLang) ? navigatorLang : 'en';  
+  
+  
   const initialLangData = {
     lang: userDefaultLang,
     flag: langFlagData?.find((item) => item?.lang === userDefaultLang)?.flag,
   };
-  // -------------------------------------------------States----------------------------------------------------
+
+
+
+console.log(initialLangData)
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectedNavLink, setSelectedNavLink] = useState("home");
   const [webLang, setWebLang] = useState(initialLangData);
+  console.log(webLang)
 
   // ----------------------------------------------------------------------------------------------------------
   // -------------------------------------------------Hooks----------------------------------------------------
@@ -41,23 +52,35 @@ const RootContextProvider = ({ children }) => {
   // -----------------------------------------------Functions---------------------------------------------------
   // -----------------------------------------------------------------------------------------------------------
   // -----------------------------------------------useEffect---------------------------------------------------
+console.log("dfkajsdfkjasdlkfja",isNavigator,navigatorLang)
+  useEffect(()=>{
+setNavigator(navigator.language)
+
+  },[])
+
+  useEffect(()=>{
+setWebLang(initialLangData)
+  },[isNavigator])
   // -----------------------------------------------------------------------------------------------------------
-  return (
-    <RootContext.Provider
-      value={{
-        selectedIndex,
-        setSelectedIndex,
-        selectedNavLink,
-        setSelectedNavLink,
-        setWebLang,
-        webLang,
-        langFlagData,
-        
-      }}
-    >
-      {children}
-    </RootContext.Provider>
-  );
+ 
+    return (
+      <RootContext.Provider
+        value={{
+          selectedIndex,
+          setSelectedIndex,
+          selectedNavLink,
+          setSelectedNavLink,
+          setWebLang,
+          webLang,
+          langFlagData,
+          
+        }}
+      >
+        {children}
+      </RootContext.Provider>
+    );
+  
+ 
 };
 
 export default RootContextProvider;

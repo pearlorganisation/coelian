@@ -52,14 +52,14 @@ const Footer = () => {
 
           <div className="flex justify-around w-full flex-wrap">
             <div className="flex flex-col items-center justify-center p-5 md:text-xl md:ml-4">
-              <h4 className="text-[#7fb4ab] font-mono text-md font-extrabold">
-                <Trans i18nKey="footer.body.part1.t1"></Trans>              </h4>
+              {/* <h4 className="text-[#7fb4ab] font-mono text-md font-extrabold">
+                <Trans i18nKey="footer.body.part1.t1"></Trans>              </h4> */}
 
-              <h1 className=" text-[#a0a0a0] text-center text-md">
+              {/* <h1 className=" text-[#a0a0a0] text-center text-md">
                 <Trans i18nKey="footer.body.part1.t2"></Trans>
-              </h1>
+              </h1> */}
 
-              <div className="mailer flex mt-4">
+              {/* <div className="mailer flex mt-4">
                 <input
                   type="email"
                   id="email"
@@ -67,7 +67,7 @@ const Footer = () => {
                   className=" bg-transparent border-b-2 border-1  outline-none text-blue-200"
                 ></input>
                 <SiMinutemailer size={30} style={{ color: "white" }} />
-              </div>
+              </div> */}
             </div>
 
             <div className="grid grid-cols-2 mt-2 content-center items-center text-sm text-[#d0d3d8] md:text-xl">
