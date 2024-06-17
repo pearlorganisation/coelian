@@ -59,7 +59,7 @@ const Individuals = (props, ref) => {
           <div className="bg-[#c6cedb]  order-2 md:h-[80vh]  flex sm:flex-col  justify-center p-10  items-center">
             <p
               style={{ textShadow: "2px 5px 0px rgba(44, 42, 42, 0.6)" }}
-              className="text-5xl m-1 text-white  flex flex-col font-serif "
+              className="sm:text-3xl md:text-5xl m-1 text-white  flex flex-col font-serif "
             >
               <p>
                 <Trans i18nKey="pages.individual.title.p1"></Trans>
@@ -75,7 +75,8 @@ const Individuals = (props, ref) => {
               <Trans i18nKey="pages.individual.miniTitle"></Trans>
             </i>
           </div>
-          <div className="  overflow-hidden relative md:h-[80vh] sm:h-[50vh] flex justify-center items-center">
+
+          <div className="  overflow-hidden relative md:h-[80vh], flex justify-center items-center">
             <div className="bg-black/20 absolute  z-40 h-full "></div>
             <Swiper
               ref={swiperRef}
