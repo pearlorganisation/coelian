@@ -119,15 +119,15 @@ const Corporate = (props, ref) => {
           >
             <div className="absolute  w-full h-full bg-black/40 flex justify-center items-center ">
               <div className=" flex gap-2 flex-col justify-center items-center text-base md:text-lg  text-white z-10 font-normal md:font-semibold">
-                <p className="text-center md:text-md text-sm">
+                <p className="text-center md:text-md text-sm md:text-xl">
                   <Trans i18nKey="corporate.leftContent"></Trans>
                 </p>
 
-                <p className="text-center md:text-md text-sm">
+                <p className="text-center md:text-md text-sm md:text-xl">
                   <Trans i18nKey="corporate.content1" />
                 </p>
 
-                <button className=" bg-[#b7a16e] rounded-md w-[100px]">
+                <button className=" bg-[#ccb47d] rounded-md w-[100px] md:text-xl">
                   <Trans i18nKey="corporate.listing"></Trans> (1)
                 </button>
               </div>
@@ -144,13 +144,13 @@ const Corporate = (props, ref) => {
             <div className="absolute  w-full h-full bg-black/40 flex justify-center items-center ">
               <div className=" flex gap-2 flex-col items-center text-base md:text-lg text-white z-10 font-normal  md:font-semibold">
                 <p>
-                  <Trans i18nKey="corporate.rightContent"></Trans>
+                  <Trans i18nKey="corporate.rightContent md:text-xl"></Trans>
                 </p>
-                <div className="text-center text-sm">
+                <div className="text-center text-sm md:text-xl">
                   <p className="md:text-md ">
                     <Trans i18nKey="corporate.content2" />
                   </p>
-                  <p className="md:text-md text-sm">
+                  <p className="md:text-md text-sm md:text-xl">
                     <Trans i18nKey="corporate.content3" />
                   </p>
                 </div>

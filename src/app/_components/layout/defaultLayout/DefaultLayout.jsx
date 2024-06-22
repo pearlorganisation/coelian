@@ -9,6 +9,7 @@ import Blogs from "../../blogs/Blogs";
 import { RootContext } from "@/app/_contexts/RootContext/RootContextProvider";
 import TrustedBy from "../../TrustedBy/TrustedBy";
 import Individuals from "../../individuals/Individuals";
+import BlogDeatils from "../../blogs/BlogDetails/BlogDeatils";
 
 // -----------------------------------------------------------------------------------------------------------
 
@@ -103,6 +104,7 @@ export default function DefaultLayout({ params, children }) {
       <Corporate ref={corporateRef} />
       <Individuals />
       <Blogs ref={blogsRef} />
+      <BlogDeatils />
       <ContactUs ref={contactUsRef} />
     </>
   );

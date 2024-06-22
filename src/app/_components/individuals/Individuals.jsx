@@ -59,7 +59,7 @@ const Individuals = (props, ref) => {
           <div className="bg-[#c6cedb]  order-2 md:h-[80vh]  flex sm:flex-col  justify-center p-10  items-center">
             <p
               style={{ textShadow: "2px 5px 0px rgba(44, 42, 42, 0.6)" }}
-              className="sm:text-3xl md:text-5xl m-1 text-white  flex flex-col font-serif "
+              className=" md:text-5xl text-3xl m-1 text-white  flex flex-col font-serif "
             >
               <p>
                 <Trans i18nKey="pages.individual.title.p1"></Trans>
@@ -71,12 +71,13 @@ const Individuals = (props, ref) => {
                 <Trans i18nKey="pages.individual.title.p3"></Trans>
               </p>
             </p>
-            <i className="font-serif   text-white text-xl  font-semibold">
+
+            <i className="font-serif text-white md:text-xl text-sm  font-semibold">
               <Trans i18nKey="pages.individual.miniTitle"></Trans>
             </i>
           </div>
 
-          <div className="  overflow-hidden relative md:h-[80vh], flex justify-center items-center">
+          <div className="  overflow-hidden relative md:h-[100vh], flex justify-center items-center">
             <div className="bg-black/20 absolute  z-40 h-full "></div>
             <Swiper
               ref={swiperRef}
@@ -90,42 +91,42 @@ const Individuals = (props, ref) => {
                 <Image
                   src={apartmentImg}
                   alt="Apartment"
-                  className="md:h-full  md:w-auto h-[300px] w-full object-cover "
+                  className="md:h-[80vh] h-full w-full object-cover "
                 />
               </SwiperSlide>
               <SwiperSlide className=" h-full overflow-hidden">
                 <Image
                   src={apartmentImg1}
                   alt="Apartment"
-                  className="md:h-full  md:w-auto h-[300px] w-full object-cover"
+                  className="md:h-[80vh]  md:w-auto h-[300px] w-full object-cover"
                 />
               </SwiperSlide>
               <SwiperSlide className=" h-full overflow-hidden">
                 <Image
                   src={apartmentImg2}
                   alt="Apartment"
-                  className="md:h-full  md:w-auto h-[300px] w-full object-cover"
+                  className="md:h-[80vh]  md:w-auto h-[300px] w-full object-cover"
                 />
               </SwiperSlide>
               <SwiperSlide className=" h-full overflow-hidden">
                 <Image
                   src={apartmentImg3}
                   alt="Apartment"
-                  className="md:h-full  md:w-auto h-[300px] w-full object-cover"
+                  className="md:h-[80vh] md:w-auto h-[300px] w-full object-cover"
                 />
               </SwiperSlide>
               <SwiperSlide className=" h-full overflow-hidden">
                 <Image
                   src={apartmentImg4}
                   alt="Apartment"
-                  className="md:h-full  md:w-auto h-[300px] w-full object-cover"
+                  className="md:h-[80vh]  md:w-auto h-[300px] w-full object-cover"
                 />
               </SwiperSlide>
               <SwiperSlide className=" h-full overflow-hidden">
                 <Image
                   src={apartmentImg5}
                   alt="Apartment"
-                  className="md:h-full  md:w-auto h-[300px] w-full object-cover"
+                  className="md:h-[80vh]  md:w-auto h-[300px] w-full object-cover"
                 />
               </SwiperSlide>
             </Swiper>

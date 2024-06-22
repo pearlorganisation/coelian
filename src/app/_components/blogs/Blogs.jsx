@@ -104,9 +104,9 @@ const Blogs = (props, ref) => {
 
   return (
     <div className="blogs blogBackground" ref={blogsRef}>
-      <section className="pt-20 lg:pt-[100px] pb-8 lg:pb-10">
+      <section className="pt-10 lg:pt-[50px] pb-8 lg:pb-10">
         <div className="flex justify-center items-center m-4">
-          <p className="font-extrabold text-3xl">{blogTitle}</p>
+          <p className="font-extrabold text-3xl p-5">{blogTitle}</p>
         </div>
         <div className="container mx-auto">
           <Swiper

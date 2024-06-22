@@ -21,13 +21,19 @@ const Footer = () => {
     <footer className="bg-[#303031] w-full">
       <div className="container mx-auto px-4 py-8 md:py-12 grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* "Make the right data-driven decision that move your business." section */}
+
         <div className="md:flex md:flex-row md:w-full justify-center items-center md:p-1 md:m-4">
           <div className="content flex flex-col justify-center items-center">
             <div className="img md:block md:p-2 cursor-pointer">
               <Link href="/">
-                <Image src={logo} alt={"Logo"} className="w-[60px] h-[60px]" />
+                <Image
+                  src={logo}
+                  alt={"Logo"}
+                  className="md:w-[90px] md:h-[90px] w-[60px] h-[60px] "
+                />
               </Link>
             </div>
+
             <p className="text-white text-center p-2 text-sm md:text-xl">
               <Trans i18nKey="footer.title" />
             </p>
@@ -35,21 +41,22 @@ const Footer = () => {
         </div>
 
         {/* "About Us" section */}
+
         <div className="md:flex gap-10 items-center justify-center md:justify-center">
-          <div className="text-center md:text-left">
-            <p className="text-white">
+          <div className="text-center md:text-left ">
+            <p className="text-white md:text-xl">
               <a href="#">
                 <Trans i18nKey="footer.body.part2.about" />
               </a>
             </p>
 
-            <p className="text-white">
+            <p className="text-white md:text-xl">
               <Link href="#">
                 <Trans i18nKey="footer.body.part2.jobs" />
               </Link>
             </p>
 
-            <p className="text-white">
+            <p className="text-white md:text-xl">
               <button
                 onClick={() => {
                   router.push("/services");
@@ -61,18 +68,18 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left md:text-lg">
             <p className="text-white">
               <a href="#">
                 <Trans i18nKey="footer.body.part2.terms_and_condition" />
               </a>
             </p>
-            <p className="text-white">
+            <p className="text-white md:text-lg">
               <a href="#">
                 <Trans i18nKey="footer.body.part2.privacy_policy" />
               </a>{" "}
             </p>
-            <p className="text-white">
+            <p className="text-white md:text-lg ">
               <a href="#">
                 <Trans i18nKey="footer.body.part2.cookie_policy" />
               </a>
@@ -81,8 +88,18 @@ const Footer = () => {
         </div>
 
         {/* Facebook logo */}
-        <div className="flex justify-center md:justify-center items-center text-white">
-          <FaFacebookF size={40} />
+        <div className="flex justify-center md:justify-center items-center  hover:text-blue-600 ">
+          <div
+            className="text-blue-500  
+           border rounded
+           bg-white 
+           md:w-[100px] 
+           md:h-[100px] 
+           p-5 grid grid-cols-1
+            place-content-center"
+          >
+            <FaFacebookF size={50} />
+          </div>
         </div>
       </div>
 
